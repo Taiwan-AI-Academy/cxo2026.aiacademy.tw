@@ -76,6 +76,13 @@
             border: 1px solid rgba(0, 0, 0, 0.08);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
         }
+
+        /* Dark Glassmorphism for Dark Backgrounds */
+        .glass-card.dark {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
         
         .glass-card-hover:hover {
             border-color: rgba(212, 175, 55, 0.4);
@@ -178,26 +185,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-b from-lightGray via-white to-white">
-        <!-- Abstract Background Canvas -->
-        <canvas id="bg-canvas"></canvas>
-        
-        <!-- Subtle Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-white/80 to-white z-0"></div>
+    <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style="background-image: url('assets/hero-unsplash.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <!-- Dark Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-obsidian/70 via-obsidian/60 to-obsidian/70 z-0"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
-            <div class="inline-block mb-6 px-4 py-1 border border-techBlue/30 rounded-full bg-blue-50 backdrop-blur-sm fade-up">
-                <span class="text-techBlue text-xs font-bold tracking-[0.2em] uppercase">Governance &bull; Strategy &bull; Leadership</span>
+            <div class="inline-block mb-6 px-4 py-1 border border-white/40 rounded-full bg-white/20 backdrop-blur-sm fade-up">
+                <span class="text-white text-xs font-bold tracking-[0.2em] uppercase drop-shadow-md">Governance &bull; Strategy &bull; Leadership</span>
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 fade-up text-obsidian" style="line-height: 1.2;">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 fade-up text-white drop-shadow-lg" style="line-height: 1.2; text-shadow: 0 2px 20px rgba(0,0,0,0.5);">
                 2026 全國董總 <br>
-                <span class="text-gradient-gold">AI 大講堂</span>
+                <span class="text-gradient-gold" style="text-shadow: 0 2px 20px rgba(0,0,0,0.7);">AI 大講堂</span>
             </h1>
 
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-textSecondary font-light tracking-wide fade-up delay-100">
-                台灣上市櫃公司董監事 <span class="text-obsidian font-medium border-b-2 border-prestigeGold/50 pb-1">AI 治理必修課</span> 唯一選擇
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-white font-light tracking-wide fade-up delay-100 drop-shadow-md" style="text-shadow: 0 1px 10px rgba(0,0,0,0.5);">
+                台灣上市櫃公司董監事 <span class="text-white font-medium border-b-2 border-prestigeGold/70 pb-1" style="text-shadow: 0 1px 10px rgba(0,0,0,0.7);">AI 治理必修課</span> 唯一選擇
             </p>
 
             <div class="mt-12 flex justify-center fade-up delay-200">
@@ -209,7 +213,8 @@
                     </div>
                     <div class="text-left flex-1 border-r border-borderLight pr-6">
                         <div class="text-xs text-textSecondary uppercase tracking-widest mb-1">Venue</div>
-                        <div class="text-lg text-obsidian">台北寒舍艾美酒店 <span class="text-sm text-textSecondary block">3F 宴會廳</span></div>
+                        <div class="text-lg text-obsidian">台北萬豪酒店 <span class="text-sm text-textSecondary block">五樓萬豪廳</span></div>
+                        <div class="text-xs text-textSecondary mt-1">台北市中山區樂群二路199號</div>
                     </div>
                     <div class="text-left flex-1">
                         <div class="text-xs text-textSecondary uppercase tracking-widest mb-1">Organizer</div>
@@ -218,8 +223,19 @@
                 </div>
             </div>
             
+            <!-- Fee Info Card -->
+            <div class="mt-6 flex justify-center fade-up delay-300">
+                <div class="glass-card px-6 py-3 rounded-lg inline-block">
+                    <div class="flex items-center gap-3">
+                        <div class="text-xs text-textSecondary uppercase tracking-widest">Fee</div>
+                        <div class="text-lg text-obsidian font-serif">NT$ 6,600 <span class="text-sm font-sans text-textSecondary">(含稅)</span></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
             <div class="mt-10 fade-up delay-300">
-                <i class="fa-solid fa-chevron-down text-prestigeGold/70 animate-bounce text-2xl"></i>
+                <i class="fa-solid fa-chevron-down text-prestigeGold animate-bounce text-2xl drop-shadow-lg" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);"></i>
             </div>
         </div>
     </header>
@@ -286,11 +302,9 @@
                 <div class="glass-card p-0 rounded-sm overflow-hidden flex flex-col md:flex-row fade-up">
                     <div class="w-full md:w-1/4 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8">
                         <div class="text-center">
-                            <div class="w-24 h-24 rounded-full bg-white mx-auto mb-4 flex items-center justify-center border-2 border-prestigeGold/50 shadow-lg">
-                                <i class="fa-solid fa-user-tie text-4xl text-obsidian"></i>
-                            </div>
+                            <img src="assets/1-chen.jpeg" alt="陳伶志" class="w-24 h-24 rounded-full object-cover border-2 border-prestigeGold/50 shadow-lg mx-auto mb-4">
                             <h4 class="text-xl font-bold text-obsidian">陳伶志</h4>
-                            <div class="text-xs text-prestigeGold mt-1 uppercase tracking-wide font-semibold">研究員 / 執行長</div>
+                            <div class="text-xs text-prestigeGold mt-1 uppercase tracking-wide font-semibold">執行長 / 處長</div>
                         </div>
                     </div>
                     <div class="p-8 md:w-3/4 flex flex-col justify-center bg-white">
@@ -310,13 +324,37 @@
                     </div>
                 </div>
 
-                <!-- Speaker 2: 余孝先 -->
+                <!-- Speaker 2: 連賢明 -->
                 <div class="glass-card p-0 rounded-sm overflow-hidden flex flex-col md:flex-row fade-up delay-100">
                     <div class="w-full md:w-1/4 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8">
                         <div class="text-center">
-                            <div class="w-24 h-24 rounded-full bg-white mx-auto mb-4 flex items-center justify-center border-2 border-prestigeGold/50 shadow-lg">
-                                <i class="fa-solid fa-user-tie text-4xl text-obsidian"></i>
-                            </div>
+                            <img src="assets/2-lien.jpg" alt="連賢明" class="w-24 h-24 rounded-full object-cover border-2 border-prestigeGold/50 shadow-lg mx-auto mb-4">
+                            <h4 class="text-xl font-bold text-obsidian">連賢明</h4>
+                            <div class="text-xs text-prestigeGold mt-1 uppercase tracking-wide font-semibold">院長</div>
+                        </div>
+                    </div>
+                    <div class="p-8 md:w-3/4 flex flex-col justify-center bg-white">
+                        <div class="mb-2">
+                            <span class="inline-block px-3 py-1 bg-techBlue/10 text-techBlue text-xs font-bold rounded-full mb-2">經濟分析 / 政策</span>
+                        </div>
+                        <h5 class="text-lg font-bold text-obsidian mb-2">現任：中華經濟研究院 院長</h5>
+                        <p class="text-textSecondary text-sm mb-4">
+                            專精於總體經濟分析與政策研究，解析 AI 時代對台灣經濟結構的深層影響，探討匯率、利率與 AI 動能如何交織重塑企業競爭環境。
+                        </p>
+                        <ul class="text-sm text-textSecondary space-y-1 list-disc list-inside">
+                            <li>AI 時代的台灣經濟結構變遷</li>
+                            <li>匯率波動與 AI 產業投資的關聯性</li>
+                            <li>利率政策對 AI 創新生態的影響</li>
+                            <li>AI 動能驅動的產業轉型與競爭力重塑</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Speaker 3: 余孝先 -->
+                <div class="glass-card p-0 rounded-sm overflow-hidden flex flex-col md:flex-row fade-up delay-200">
+                    <div class="w-full md:w-1/4 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <img src="assets/3-yu.jpg" alt="余孝先" class="w-24 h-24 rounded-full object-cover border-2 border-prestigeGold/50 shadow-lg mx-auto mb-4">
                             <h4 class="text-xl font-bold text-obsidian">余孝先</h4>
                             <div class="text-xs text-prestigeGold mt-1 uppercase tracking-wide font-semibold">兼任教授</div>
                         </div>
@@ -338,41 +376,11 @@
                     </div>
                 </div>
 
-                <!-- Speaker 3: 陳維超 -->
-                <div class="glass-card p-0 rounded-sm overflow-hidden flex flex-col md:flex-row fade-up delay-200">
-                    <div class="w-full md:w-1/4 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8">
-                        <div class="text-center">
-                            <div class="w-24 h-24 rounded-full bg-white mx-auto mb-4 flex items-center justify-center border-2 border-prestigeGold/50 shadow-lg">
-                                <i class="fa-solid fa-user-tie text-4xl text-obsidian"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-obsidian">陳維超</h4>
-                            <div class="text-xs text-prestigeGold mt-1 uppercase tracking-wide font-semibold">資深專家 / 客座教授</div>
-                        </div>
-                    </div>
-                    <div class="p-8 md:w-3/4 flex flex-col justify-center bg-white">
-                        <div class="mb-2">
-                            <span class="inline-block px-3 py-1 bg-techBlue/10 text-techBlue text-xs font-bold rounded-full mb-2">組織變革 / 領導力</span>
-                        </div>
-                        <h5 class="text-lg font-bold text-obsidian mb-2">現任：工研院資深專家 / 臺灣大學資訊工程學系客座教授</h5>
-                        <p class="text-textSecondary text-sm mb-4">
-                            專注於數位轉型的組織心理學與變革管理，協助企業建立 AI 原生文化與人才梯隊。
-                        </p>
-                        <ul class="text-sm text-textSecondary space-y-1 list-disc list-inside">
-                            <li>數位轉型的心理學：化解中高階主管對 AI 取代人力的焦慮</li>
-                            <li>組織架構重整：CDO（首席數位官）或 CAIO（首席 AI 官）的必要性</li>
-                            <li>人才賦能策略：建立「AI 原生」的企業文化</li>
-                            <li>變革管理實務：從傳統運作模式平滑過渡到 AI 輔助決策系統</li>
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- Speaker 4: 李家岩 -->
                 <div class="glass-card p-0 rounded-sm overflow-hidden flex flex-col md:flex-row fade-up delay-300">
                     <div class="w-full md:w-1/4 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8">
                         <div class="text-center">
-                            <div class="w-24 h-24 rounded-full bg-white mx-auto mb-4 flex items-center justify-center border-2 border-prestigeGold/50 shadow-lg">
-                                <i class="fa-solid fa-user-tie text-4xl text-obsidian"></i>
-                            </div>
+                            <img src="assets/4-lee.jpg" alt="李家岩" class="w-24 h-24 rounded-full object-cover border-2 border-prestigeGold/50 shadow-lg mx-auto mb-4">
                             <h4 class="text-xl font-bold text-obsidian">李家岩</h4>
                             <div class="text-xs text-prestigeGold mt-1 uppercase tracking-wide font-semibold">副院長 / 執行長</div>
                         </div>
@@ -465,10 +473,43 @@
                     </div>
                 </div>
 
-                <!-- Time Slot 11:10 - 余孝先 -->
+                <!-- Time Slot 11:10 - 連賢明 -->
                 <div class="mb-12 relative md:flex fade-up">
                     <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
                         <span class="text-techBlue font-mono font-bold text-lg">11:10 - 12:40</span>
+                    </div>
+                    <div class="md:w-3/4 pl-6 md:pl-10 border-l-2 border-gray-300 md:border-l-prestigeGold/40 relative">
+                        <div class="absolute -left-[8.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block border-2 border-white shadow-md"></div>
+                        <h4 class="text-obsidian text-xl font-bold mb-2">AI 時代的台灣經濟：匯率、利率與 AI 動能的交織影響</h4>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-prestigeGold text-sm font-semibold">連賢明</span>
+                            <span class="text-textSecondary text-xs">中華經濟研究院 院長</span>
+                        </div>
+                        <div class="p-4 bg-lightGray border border-borderLight rounded-sm">
+                            <ul class="text-textSecondary text-sm space-y-2 list-none">
+                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>AI 時代的台灣經濟結構變遷</li>
+                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>匯率波動與 AI 產業投資的關聯性</li>
+                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>利率政策對 AI 創新生態的影響</li>
+                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>AI 動能驅動的產業轉型與競爭力重塑</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch -->
+                <div class="mb-12 relative md:flex fade-up">
+                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
+                        <span class="text-textSecondary font-mono text-sm">12:40 - 14:00</span>
+                    </div>
+                    <div class="md:w-3/4 pl-6 md:pl-10 border-l-2 border-gray-300 relative">
+                         <h4 class="text-textSecondary text-md">中午休息 (供餐) (Lunch Break)</h4>
+                    </div>
+                </div>
+
+                 <!-- Time Slot 14:00 - 余孝先 -->
+                 <div class="mb-12 relative md:flex fade-up">
+                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
+                        <span class="text-techBlue font-mono font-bold text-lg">14:00 - 15:30</span>
                     </div>
                     <div class="md:w-3/4 pl-6 md:pl-10 border-l-2 border-gray-300 md:border-l-prestigeGold/40 relative">
                         <div class="absolute -left-[8.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block border-2 border-white shadow-md"></div>
@@ -483,39 +524,6 @@
                                 <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>邊緣 AI (Edge AI) 趨勢：台灣硬體實力如何轉化為軟硬整合的 AI 競爭力</li>
                                 <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>成功案例拆解：上市櫃公司導入 AI 提升毛利率與市佔率的實體路徑</li>
                                 <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>佈局策略：企業應採購現成方案（Buy）、委外開發（Outsource）還是自行建置（Build）？</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lunch -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-textSecondary font-mono text-sm">12:40 - 14:00</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l-2 border-gray-300 relative">
-                         <h4 class="text-textSecondary text-md">中午休息 (不供餐) (Lunch Break)</h4>
-                    </div>
-                </div>
-
-                 <!-- Time Slot 14:00 - 陳維超 -->
-                 <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">14:00 - 15:30</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l-2 border-gray-300 md:border-l-prestigeGold/40 relative">
-                        <div class="absolute -left-[8.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block border-2 border-white shadow-md"></div>
-                        <h4 class="text-obsidian text-xl font-bold mb-2">董監事的 AI 領導力：重構轉型期的企業組織文化與人才梯隊</h4>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-prestigeGold text-sm font-semibold">陳維超</span>
-                            <span class="text-textSecondary text-xs">工研院資深專家 / 臺灣大學資訊工程學系客座教授</span>
-                        </div>
-                        <div class="p-4 bg-lightGray border border-borderLight rounded-sm">
-                            <ul class="text-textSecondary text-sm space-y-2 list-none">
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>數位轉型的心理學：如何化解中高階主管對 AI 取代人力的焦慮</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>組織架構重整：為何企業需要 CDO（首席數位官）或 CAIO（首席 AI 官）？</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>人才賦能策略：建立「AI 原生」的企業文化，從董監事開始的思維革新</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>變革管理實務：引導企業從傳統運作模式平滑過渡到 AI 輔助決策系統</li>
                             </ul>
                         </div>
                     </div>
@@ -582,19 +590,19 @@
                     <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-6">Venue Information</h2>
                     <h3 class="text-3xl font-bold text-obsidian mb-6">活動地點</h3>
                     <div class="glass-card p-8 rounded-sm">
-                        <h4 class="text-2xl font-bold text-obsidian mb-2">台北寒舍艾美酒店</h4>
-                        <p class="text-lg text-obsidian mb-4">3F 宴會廳</p>
+                        <h4 class="text-2xl font-bold text-obsidian mb-2">台北萬豪酒店</h4>
+                        <p class="text-lg text-obsidian mb-4">五樓萬豪廳</p>
                         <div class="flex items-start gap-4 mb-4">
                             <i class="fa-solid fa-location-dot text-prestigeGold mt-1"></i>
-                            <p class="text-textSecondary">台北市信義區松仁路38號</p>
+                            <p class="text-textSecondary">台北市中山區樂群二路199號</p>
                         </div>
                         <div class="flex items-start gap-4 mb-4">
-                            <i class="fa-solid fa-train-subway text-prestigeGold mt-1"></i>
-                            <p class="text-textSecondary">捷運市政府站 (步行約 5-8 分鐘)</p>
+                            <i class="fa-solid fa-clock text-prestigeGold mt-1"></i>
+                            <p class="text-textSecondary">2026.04.28 (二) 09:00-16:30</p>
                         </div>
                         <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-video text-prestigeGold mt-1"></i>
-                            <p class="text-textSecondary">同步開放 Microsoft Teams 線上直播</p>
+                            <i class="fa-solid fa-tag text-prestigeGold mt-1"></i>
+                            <p class="text-textSecondary">費用：NT$ 6,600 (含稅)</p>
                         </div>
                     </div>
                 </div>
@@ -635,6 +643,75 @@
                 立即預約席次
             </button>
             <p class="mt-6 text-xs text-textSecondary uppercase tracking-widest">Registration Closes 2026.04.10</p>
+        </div>
+    </section>
+
+    <!-- Community Partners Section -->
+    <section id="partners" class="py-24 relative bg-obsidian border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">Community Partners</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white">社群夥伴</h3>
+                <div class="w-16 h-0.5 bg-prestigeGold mx-auto mt-6"></div>
+            </div>
+
+            <div class="space-y-8 fade-up delay-100">
+                <!-- First Row: 3 Partners -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Partner 1: Google -->
+                    <div class="glass-card dark p-6 rounded-sm hover:border-prestigeGold/50 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-32 h-32 rounded-lg bg-white/10 flex items-center justify-center mb-4 border border-white/20 group-hover:border-prestigeGold/50 transition-colors">
+                                <span class="text-white text-2xl font-bold tracking-wider">Google</span>
+                            </div>
+                            <h4 class="text-white font-semibold text-lg">Google</h4>
+                        </div>
+                    </div>
+
+                    <!-- Partner 2: Microsoft -->
+                    <div class="glass-card dark p-6 rounded-sm hover:border-prestigeGold/50 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-32 h-32 rounded-lg bg-white/10 flex items-center justify-center mb-4 border border-white/20 group-hover:border-prestigeGold/50 transition-colors">
+                                <span class="text-white text-2xl font-bold tracking-wider">Microsoft</span>
+                            </div>
+                            <h4 class="text-white font-semibold text-lg">Microsoft</h4>
+                        </div>
+                    </div>
+
+                    <!-- Partner 3: AWS -->
+                    <div class="glass-card dark p-6 rounded-sm hover:border-prestigeGold/50 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-32 h-32 rounded-lg bg-white/10 flex items-center justify-center mb-4 border border-white/20 group-hover:border-prestigeGold/50 transition-colors">
+                                <span class="text-white text-xl font-bold tracking-wider">AWS</span>
+                            </div>
+                            <h4 class="text-white font-semibold text-lg">Amazon Web Services</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row: 2 Partners -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <!-- Partner 4: NVIDIA -->
+                    <div class="glass-card dark p-6 rounded-sm hover:border-prestigeGold/50 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-32 h-32 rounded-lg bg-white/10 flex items-center justify-center mb-4 border border-white/20 group-hover:border-prestigeGold/50 transition-colors">
+                                <span class="text-white text-2xl font-bold tracking-wider">NVIDIA</span>
+                            </div>
+                            <h4 class="text-white font-semibold text-lg">NVIDIA</h4>
+                        </div>
+                    </div>
+
+                    <!-- Partner 5: IBM -->
+                    <div class="glass-card dark p-6 rounded-sm hover:border-prestigeGold/50 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-32 h-32 rounded-lg bg-white/10 flex items-center justify-center mb-4 border border-white/20 group-hover:border-prestigeGold/50 transition-colors">
+                                <span class="text-white text-2xl font-bold tracking-wider">IBM</span>
+                            </div>
+                            <h4 class="text-white font-semibold text-lg">IBM</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -680,88 +757,11 @@
             observer.observe(el);
         });
 
-        // Canvas Background Animation (Neural Network / Governance Nodes) - Light Theme
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        let width, height;
-        let particles = [];
-        
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
-            }
-            
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 86, 179, 0.3)'; // Tech Blue for light theme
-                ctx.fill();
-            }
-        }
-        
-        function init() {
-            particles = [];
-            // Adjust particle count based on screen size for performance
-            const particleCount = window.innerWidth < 768 ? 40 : 80;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            
-            particles.forEach((p, index) => {
-                p.update();
-                p.draw();
-                
-                // Draw connections
-                for (let j = index + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const dx = p.x - p2.x;
-                    const dy = p.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (dist < 150) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 86, 179, ${0.1 - dist/1500})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
-                }
-            });
-            
-            requestAnimationFrame(animate);
-        }
-        
-        window.addEventListener('resize', () => {
-            resize();
-            init();
-        });
-        
-        resize();
-        init();
-        animate();
+        // Canvas Background Animation disabled - using hero background image instead
+        // const canvas = document.getElementById('bg-canvas');
+        // if (canvas) {
+        //     // Canvas animation code removed as we're using hero-unsplash.jpg as background
+        // }
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
