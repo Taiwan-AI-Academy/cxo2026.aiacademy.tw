@@ -1,0 +1,63 @@
+【核心活動與主題】
+
+
+Event: High-end Corporate Event Website Landing Page Design for "2026 CEO AI Masterclass" (2026 全國董總 AI 大講堂).
+
+
+Theme: Artificial Intelligence Governance, Leadership, and Digital Transformation.
+
+
+Target Audience: Taiwan Listed Company Directors, Supervisors, and Senior Executives.
+
+
+【整體風格與調性】
+
+
+Style & Tone: Boardroom-grade Authority, Visionary, Sophisticated, Institutional, and Premium Tech. The design must convey Trustworthiness, Rigor, and Mandatory Governance/Risk Mitigation. Crucially, avoid overly flashy or "tech expo" style AI visuals; focus on structure and executive-level authority.
+
+
+【視覺語言與色彩】
+
+
+Primary Colors: Deep Obsidian Black / Deep Sea Blue (#0A1E3D) / Graphite Gray background.
+
+
+Accent Colors: Controlled use of Electric Blue data streams / Low-saturation Tech Blue (e.g., #00D4FF).
+
+
+Prestige Accent: Minimal use of Champagne Gold / Amber Gold (#D4AF37) for Call-to-Action (CTA), key highlights, and prestigious accents only.
+
+
+【關鍵視覺與 UI 元素】
+
+
+Key Visual: Abstract 3D Neural Network / Microchip Structure connecting to a Digital Globe. The central visual should be a metaphor for "Smart Governance" or a "Digital Boardroom Table" projecting AI data streams.
+
+
+UI Design:
+Cards: Glassmorphism (Frosted Glass) information cards.
+Borders: Sleek, thin Metallic or Golden borders.
+Typography: Clean Sans-serif fonts. Titles should be large, stable, and authoritative (like a board meeting presentation cover).
+Layout: High contrast but with ample negative space (Low chroma, emphasizing structure and order). Long-scroll Single Page structure.
+【網站結構與內容（重要提示）】
+Top Navigation: Fixed dark navigation bar. Include a prominent Gold-accented CTA button in the upper right corner.
+Hero Section: Full-screen hero with a deep background gradient (Obsidian/Deep Blue). Display the full event name and the governance-declarative subtitle ("AI 治理必修課唯一選擇"). Embed the glassmorphism info card (Date, Location, Certification).
+Content Modules: Content sections must be structured with lists, clear segmentation, and a focus on essential information hierarchy. Modules should include:
+Why the Board Must Understand AI (Compliance, Risk, Responsibility).
+Speaker Introduction (Focus on deep experience, simple design).
+Agenda (Designed with a "Board Meeting Timeline" feel).
+Target Audience (Directors, Independent Directors, Executives).
+Call-to-Action (CTA) Copy: Must be restrained and steady, leaning towards "Register / Reserve Seat / Governance Mandatory."
+【技術與渲染要求】
+
+
+Atmosphere: Authoritative, Visionary, High-tech, Trustworthy.
+
+
+Technical Specs: Cinematic lighting, 8k resolution, Unreal Engine 5 render style.
+
+
+Aspect Ratio: --ar 16:9
+
+
+Style Level: --stylize 250

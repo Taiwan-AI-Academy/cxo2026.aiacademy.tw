@@ -1,0 +1,12 @@
+{
+  "name": "ceo-ai-masterclass",
+  "version": "1.0.0",
+  "description": "2026 CEO AI Masterclass Landing Page",
+  "scripts": {
+    "serve": "serve . -l tcp://0.0.0.0:3005"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
+
