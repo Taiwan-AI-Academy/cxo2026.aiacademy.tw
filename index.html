@@ -85,6 +85,7 @@
         .text-gradient-gold {
             background: linear-gradient(to right, #D4AF37, #FFE588, #D4AF37);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
             animation: shine 5s linear infinite;
@@ -93,6 +94,7 @@
         .text-gradient-blue {
             background: linear-gradient(to right, #00D4FF, #ffffff);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -130,6 +132,53 @@
             margin: 0 auto;
             width: 80%;
         }
+
+        /* Floating CTA Button */
+        .floating-cta {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 40;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            background: rgba(10, 30, 61, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+            padding: 20px 12px;
+            color: #D4AF37;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.75;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .floating-cta:hover {
+            opacity: 1;
+            background: rgba(10, 30, 61, 0.9);
+            border-color: rgba(212, 175, 55, 0.6);
+            padding-right: 14px;
+            box-shadow: -4px 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .floating-cta:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        /* Hide on mobile to avoid blocking content */
+        @media (max-width: 768px) {
+            .floating-cta {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-prestigeGold selection:text-obsidian">
@@ -140,7 +189,7 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <!-- AIA Logo -->
-                    <img src="assets/logo-white.svg" alt="台灣人工智慧學校" class="h-10 w-auto">
+                    <img src="assets/logo-eng-horizon-white.svg" alt="台灣人工智慧學校" class="h-10 w-auto">
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -150,7 +199,7 @@
                         <a href="#venue" class="hover:text-prestigeGold transition-colors text-sm tracking-wider uppercase">場地資訊</a>
                     </div>
                 </div>
-                <div>
+                <div class="hidden md:block">
                     <a href="#register" class="bg-transparent border border-prestigeGold text-prestigeGold hover:bg-prestigeGold hover:text-obsidian px-6 py-2 rounded-sm text-sm font-semibold transition-all duration-300 uppercase tracking-widest">
                         立即預約席次
                     </a>
@@ -161,11 +210,13 @@
 
     <!-- Hero Section -->
     <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <!-- Abstract Background Canvas -->
-        <canvas id="bg-canvas"></canvas>
-
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero-unsplash.jpg" alt="" class="w-full h-full object-cover">
+        </div>
+        
         <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-obsidian/30 via-obsidian/80 to-obsidian z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-obsidian/30 via-obsidian/80 to-obsidian z-[1]"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
@@ -203,7 +254,7 @@
             <!-- Organizer Badge -->
             <div class="absolute bottom-8 right-8 text-right fade-up delay-300">
                 <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">Organized by</div>
-                <img src="assets/logo-white.svg" alt="台灣人工智慧學校" class="h-8 w-auto ml-auto opacity-70">
+                <img src="assets/logo-eng-horizon-white.svg" alt="台灣人工智慧學校" class="h-8 w-auto ml-auto opacity-70">
             </div>
 
             <div class="mt-10 fade-up delay-300">
@@ -397,167 +448,153 @@
                 <h3 class="text-3xl md:text-4xl font-bold text-white">議程規劃</h3>
             </div>
 
-            <div class="relative border-l border-gray-800 ml-4 md:ml-0 md:pl-0">
+            <div class="space-y-4">
 
                 <!-- Time Slot 08:30 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-gray-600 md:hidden"></div>
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">08:30 - 09:00</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-prestigeGold/30 relative">
-                        <div class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block box-shadow-glow"></div>
-                        <h4 class="text-white text-lg font-bold">參與者報到</h4>
-                        <p class="text-gray-500 text-sm mt-1">Registration</p>
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-techBlue font-mono font-bold text-lg">08:30 - 09:00</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-lg font-bold">參與者報到</h4>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Time Slot 09:00 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">09:00 - 09:20</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-prestigeGold/30 relative">
-                        <div class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block"></div>
-                        <h4 class="text-white text-lg font-bold">主辦單位暨貴賓致詞 / 團體合影</h4>
-                        <p class="text-gray-400 text-sm mt-1">台灣人工智慧學校執行長 / 台灣證券交易所 李愛玲 總經理</p>
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-techBlue font-mono font-bold text-lg">09:00 - 09:20</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-lg font-bold">主辦單位暨貴賓致詞 / 團體合影</h4>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Time Slot 09:20 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">09:20 - 10:50</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-prestigeGold/30 relative">
-                        <div class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block"></div>
-                        <h4 class="text-white text-xl font-bold mb-2">全球 AI 治理新標準：從法規合規到資安防禦的信任藍圖</h4>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-prestigeGold text-sm font-semibold">陳伶志</span>
-                            <span class="text-gray-500 text-xs">台灣人工智慧學校執行長 / 中研院資服處處長</span>
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-prestigeGold font-mono font-bold text-lg">09:20 - 10:50</span>
                         </div>
-                        <div class="p-4 bg-white/5 border border-white/10 rounded-sm">
-                            <ul class="text-gray-400 text-sm space-y-2 list-none">
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>全球 AI 法案解析：從「合規」變成董事會的風險治理責任</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>企業隱私與資料產權：用「不造成傷害」設計 AI 治理</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>AI 資安攻防：深偽與生成式攻擊的可驗證防禦</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>倫理與問責：透明與審計把錯誤成本降到可控</li>
-                            </ul>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold mb-3">全球 AI 治理新標準：從法規合規到資安防禦的信任藍圖</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-sm font-semibold">陳伶志</span>
+                                <span class="text-gray-400 text-xs">台灣人工智慧學校執行長 / 中研院資服處處長</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-sm space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>全球 AI 法案解析：從「合規」變成董事會的風險治理責任</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業隱私與資料產權：用「不造成傷害」設計 AI 治理</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 資安攻防：深偽與生成式攻擊的可驗證防禦</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>倫理與問責：透明與審計把錯誤成本降到可控</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Break 1 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-gray-500 font-mono text-sm">10:50 - 11:10</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-gray-800 relative">
-                        <h4 class="text-gray-400 text-md"><i class="fa-solid fa-mug-hot mr-2"></i>休息用茶點</h4>
                     </div>
                 </div>
 
                 <!-- Time Slot 11:10 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">11:10 - 12:40</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-prestigeGold/30 relative">
-                        <div class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block"></div>
-                        <h4 class="text-white text-xl font-bold mb-2">AI 時代的台灣經濟：匯率、利率與 AI 動能的交織影響</h4>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-prestigeGold text-sm font-semibold">連賢明</span>
-                            <span class="text-gray-500 text-xs">中華經濟研究院 院長</span>
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-prestigeGold font-mono font-bold text-lg">11:10 - 12:40</span>
                         </div>
-                        <div class="p-4 bg-white/5 border border-white/10 rounded-sm">
-                            <ul class="text-gray-400 text-sm space-y-2 list-none">
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>2026 的重點：地緣政治和 AI</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>川普的貿易戰目標為何？</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>台灣和美國的貿易協定</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>AI 產業對台灣經濟成長與分配的影響</li>
-                            </ul>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold mb-3">AI 時代的台灣經濟：匯率、利率與 AI 動能的交織影響</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-sm font-semibold">連賢明</span>
+                                <span class="text-gray-400 text-xs">中華經濟研究院 院長</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-sm space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>2026 的重點：地緣政治和 AI</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>川普的貿易戰目標為何？</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>台灣和美國的貿易協定</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 產業對台灣經濟成長與分配的影響</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Lunch -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-gray-500 font-mono text-sm">12:40 - 14:00</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-gray-800 relative">
-                        <h4 class="text-gray-400 text-md"><i class="fa-solid fa-utensils mr-2"></i>中午休息 (供餐)</h4>
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-gray-500 font-mono text-sm">12:40 - 14:00</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-gray-300 text-md"><i class="fa-solid fa-utensils mr-2"></i>中午休息 (供餐)</h4>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Time Slot 14:00 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">14:00 - 15:30</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-prestigeGold/30 relative">
-                        <div class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block"></div>
-                        <h4 class="text-white text-xl font-bold mb-2">董監事對 AI 應有的認知：AI 原理、衝擊、機會與因應之道</h4>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-prestigeGold text-sm font-semibold">余孝先</span>
-                            <span class="text-gray-500 text-xs">清華大學科技管理學院 兼任教授</span>
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-prestigeGold font-mono font-bold text-lg">14:00 - 15:30</span>
                         </div>
-                        <div class="p-4 bg-white/5 border border-white/10 rounded-sm">
-                            <ul class="text-gray-400 text-sm space-y-2 list-none">
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>人工智慧原理：何為 AI？與智慧系統、機器學習之關連</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>AI 近十年重大進展：類神經網路與生成式 AI 的影響與挑戰</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>如何迎向 AI 機遇：企業如何獲益並控管風險</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>展望與結語：AI 未來發展與對社會的影響</li>
-                            </ul>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold mb-3">董監事對 AI 應有的認知：AI 原理、衝擊、機會與因應之道</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-sm font-semibold">余孝先</span>
+                                <span class="text-gray-400 text-xs">清華大學科技管理學院 兼任教授</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-sm space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>人工智慧原理：何為 AI？與智慧系統、機器學習之關連</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 近十年重大進展：類神經網路與生成式 AI 的影響與挑戰</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>如何迎向 AI 機遇：企業如何獲益並控管風險</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>展望與結語：AI 未來發展與對社會的影響</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Break 2 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-gray-500 font-mono text-sm">15:30 - 15:50</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-gray-800 relative">
-                        <h4 class="text-gray-400 text-md"><i class="fa-solid fa-mug-hot mr-2"></i>休息用茶點</h4>
                     </div>
                 </div>
 
                 <!-- Time Slot 15:50 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">15:50 - 16:20</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-prestigeGold/30 relative">
-                        <div class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block"></div>
-                        <h4 class="text-white text-xl font-bold mb-2">數據驅動的決策革新：以 AI 優化企業營運效率與股東價值</h4>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-prestigeGold text-sm font-semibold">李家岩</span>
-                            <span class="text-gray-500 text-xs">臺灣大學管理學院 副院長暨 EiMBA 執行長</span>
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-prestigeGold font-mono font-bold text-lg">15:50 - 16:20</span>
                         </div>
-                        <div class="p-4 bg-white/5 border border-white/10 rounded-sm">
-                            <ul class="text-gray-400 text-sm space-y-2 list-none">
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>為何「數據 × AI」已成為企業競爭的核心引擎</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>企業營運效率提升的四大關鍵場景</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>領導人的「第七項修練」</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>AI 如何影響企業價值</li>
-                                <li><i class="fa-solid fa-angle-right text-techBlue/70 mr-2"></i>企業導入 AI 決策的六大誤區與關鍵成功要素</li>
-                            </ul>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold mb-3">數據驅動的決策革新：以 AI 優化企業營運效率與股東價值</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-sm font-semibold">李家岩</span>
+                                <span class="text-gray-400 text-xs">臺灣大學管理學院 副院長暨 EiMBA 執行長</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-sm space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>為何「數據 × AI」已成為企業競爭的核心引擎</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業營運效率提升的四大關鍵場景</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>領導人的「第七項修練」</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 如何影響企業價值</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業導入 AI 決策的六大誤區與關鍵成功要素</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Time Slot 16:20 -->
-                <div class="mb-12 relative md:flex fade-up">
-                    <div class="md:w-1/4 md:text-right md:pr-12 mb-2 md:mb-0">
-                        <span class="text-techBlue font-mono font-bold text-lg">16:20 - 16:30</span>
-                    </div>
-                    <div class="md:w-3/4 pl-6 md:pl-10 border-l border-gray-800 md:border-l-prestigeGold/30 relative">
-                        <div class="absolute -left-[6.5px] top-2 w-3 h-3 rounded-full bg-prestigeGold hidden md:block"></div>
-                        <h4 class="text-white text-xl font-bold mb-2">課程總結</h4>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-prestigeGold text-sm font-semibold">蔡明順</span>
-                            <span class="text-gray-500 text-xs">台灣人工智慧學校 校務長</span>
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <span class="text-techBlue font-mono font-bold text-lg">16:20 - 16:30</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-lg font-bold mb-2">課程總結</h4>
+                            <div class="flex items-center gap-2">
+                                <span class="text-prestigeGold text-sm font-semibold">蔡明順</span>
+                                <span class="text-gray-500 text-xs">台灣人工智慧學校 校務長</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -566,7 +603,7 @@
         </div>
     </section>
 
-    <!-- Venue & Target Audience -->
+    <!-- Venue Section -->
     <section id="venue" class="py-24 bg-gray-900 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -592,23 +629,21 @@
                     </div>
                 </div>
 
-                <!-- Audience -->
+                <!-- Google Map -->
                 <div class="fade-up delay-100">
-                    <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-6">Target Audience</h2>
-                    <h3 class="text-3xl font-bold text-white mb-6">建議參與對象</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center p-4 border border-white/10 bg-white/5 rounded-sm">
-                            <div class="w-10 h-10 rounded-full bg-deepBlue flex items-center justify-center text-prestigeGold font-bold mr-4">01</div>
-                            <span class="text-white text-lg">上市櫃公司 董事 / 監事 / 獨立董事</span>
-                        </div>
-                        <div class="flex items-center p-4 border border-white/10 bg-white/5 rounded-sm">
-                            <div class="w-10 h-10 rounded-full bg-deepBlue flex items-center justify-center text-prestigeGold font-bold mr-4">02</div>
-                            <span class="text-white text-lg">企業 董事長 / 總經理 / 執行長</span>
-                        </div>
-                        <div class="flex items-center p-4 border border-white/10 bg-white/5 rounded-sm">
-                            <div class="w-10 h-10 rounded-full bg-deepBlue flex items-center justify-center text-prestigeGold font-bold mr-4">03</div>
-                            <span class="text-white text-lg">公司治理主管 / 高階決策主管</span>
-                        </div>
+                    <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-6">Location Map</h2>
+                    <h3 class="text-3xl font-bold text-white mb-6">交通位置</h3>
+                    <div class="glass-card p-2 rounded-sm overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.6328915654303!2d121.55672447579725!3d25.080428877786407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac0d57cba929%3A0xa49b99c29ceddf8a!2z5Y-w5YyX6JCs6LGq6YWS5bqX!5e0!3m2!1szh-TW!2stw!4v1768550317978!5m2!1szh-TW!2stw" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-sm">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -662,10 +697,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">PARTNERS</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white">社群夥伴</h3>
+                <h3 class="text-3xl md:text-4xl font-bold text-white">治理夥伴</h3>
             </div>
 
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 fade-up delay-100">
+            <div class="max-w-4xl mx-auto mb-12 fade-up delay-100">
+                <div class="glass-card p-8 rounded-lg">
+                    <h4 class="text-xl font-bold text-white mb-4 text-center">如何成為我們的夥伴</h4>
+                    <p class="text-gray-300 leading-relaxed text-center">
+                        我們誠摯邀請認同 AI 治理理念的企業與組織，共同參與這場台灣最重要的 AI 治理盛會。作為治理夥伴，您將與台灣頂尖的上市櫃公司董監事與高階主管建立深度連結，展現企業在 AI 領域的領導地位與社會責任。我們提供多元化的合作方案，包括獨家贊助、主題贊助與治理夥伴等不同層級，可依企業需求客製化合作內容。無論是技術展示、品牌曝光、人才招募或產業交流，我們都能為您打造最適合的參與方式。讓我們攜手推動台灣企業的 AI 治理轉型，共同塑造更負責任、更創新的 AI 未來。
+                    </p>
+                    <div class="mt-6 text-center">
+                        <a href="#register" class="inline-block bg-transparent border border-prestigeGold text-prestigeGold hover:bg-prestigeGold hover:text-obsidian px-8 py-3 rounded-sm text-sm font-semibold transition-all duration-300 uppercase tracking-widest">
+                            聯絡我們
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 fade-up delay-200">
                 <!-- Partner Logos (Placeholder) -->
                 <div class="glass-card px-8 py-4 rounded-sm opacity-70 hover:opacity-100 transition-opacity">
                     <span class="text-gray-400 text-sm">合作夥伴即將公布</span>
@@ -691,6 +740,11 @@
             <p class="mt-6 text-xs text-gray-500 uppercase tracking-widest">費用：每人 NT$ 6,600 (含稅)</p>
         </div>
     </section>
+
+    <!-- Floating CTA Button -->
+    <a href="#register" class="floating-cta" aria-label="立即預約席次">
+        立即預約席次
+    </a>
 
     <!-- Footer -->
     <footer class="bg-black py-12 border-t border-white/10">
@@ -735,87 +789,92 @@
         });
 
         // Canvas Background Animation (Neural Network / Governance Nodes)
+        // Note: bg-canvas is no longer used since we switched to background image
+        // This code is kept for potential future use but is disabled
         const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        let width, height;
-        let particles = [];
-        
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
-            }
-            
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+                let width, height;
+                let particles = [];
                 
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 212, 255, 0.4)'; // Tech Blue
-                ctx.fill();
-            }
-        }
-        
-        function init() {
-            particles = [];
-            // Adjust particle count based on screen size for performance
-            const particleCount = window.innerWidth < 768 ? 40 : 80;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            
-            particles.forEach((p, index) => {
-                p.update();
-                p.draw();
+                function resize() {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                }
                 
-                // Draw connections
-                for (let j = index + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const dx = p.x - p2.x;
-                    const dy = p.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * width;
+                        this.y = Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.5;
+                        this.vy = (Math.random() - 0.5) * 0.5;
+                        this.size = Math.random() * 2 + 1;
+                    }
                     
-                    if (dist < 150) {
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        
+                        if (this.x < 0 || this.x > width) this.vx *= -1;
+                        if (this.y < 0 || this.y > height) this.vy *= -1;
+                    }
+                    
+                    draw() {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 212, 255, ${0.15 - dist/1000})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(0, 212, 255, 0.4)'; // Tech Blue
+                        ctx.fill();
                     }
                 }
-            });
-            
-            requestAnimationFrame(animate);
+                
+                function init() {
+                    particles = [];
+                    // Adjust particle count based on screen size for performance
+                    const particleCount = window.innerWidth < 768 ? 40 : 80;
+                    for (let i = 0; i < particleCount; i++) {
+                        particles.push(new Particle());
+                    }
+                }
+                
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    
+                    particles.forEach((p, index) => {
+                        p.update();
+                        p.draw();
+                        
+                        // Draw connections
+                        for (let j = index + 1; j < particles.length; j++) {
+                            const p2 = particles[j];
+                            const dx = p.x - p2.x;
+                            const dy = p.y - p2.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            
+                            if (dist < 150) {
+                                ctx.beginPath();
+                                ctx.strokeStyle = `rgba(0, 212, 255, ${0.15 - dist/1000})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.moveTo(p.x, p.y);
+                                ctx.lineTo(p2.x, p2.y);
+                                ctx.stroke();
+                            }
+                        }
+                    });
+                    
+                    requestAnimationFrame(animate);
+                }
+                
+                window.addEventListener('resize', () => {
+                    resize();
+                    init();
+                });
+                
+                resize();
+                init();
+                animate();
+            }
         }
-        
-        window.addEventListener('resize', () => {
-            resize();
-            init();
-        });
-        
-        resize();
-        init();
-        animate();
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
@@ -920,6 +979,8 @@
             if (!ctaCanvas) return;
 
             const ctaCtx = ctaCanvas.getContext('2d');
+            if (!ctaCtx) return;
+
             let ctaWidth, ctaHeight;
             let time = 0;
 
@@ -930,8 +991,11 @@
 
             function resizeCtaCanvas() {
                 const section = ctaCanvas.parentElement;
-                ctaWidth = ctaCanvas.width = section.offsetWidth;
-                ctaHeight = ctaCanvas.height = section.offsetHeight;
+                if (!section) return;
+                
+                // Use window dimensions as fallback if section dimensions are not ready
+                ctaWidth = ctaCanvas.width = section.offsetWidth || window.innerWidth;
+                ctaHeight = ctaCanvas.height = section.offsetHeight || window.innerHeight;
             }
 
             function drawWaveLine(index) {
@@ -981,6 +1045,8 @@
             }
 
             function animateCtaWaves() {
+                if (!ctaCtx || !ctaWidth || !ctaHeight) return;
+                
                 ctaCtx.clearRect(0, 0, ctaWidth, ctaHeight);
 
                 // Draw all wave lines
@@ -996,8 +1062,22 @@
                 resizeCtaCanvas();
             });
 
-            resizeCtaCanvas();
-            animateCtaWaves();
+            // Wait for DOM to be ready and ensure section dimensions are calculated
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Use setTimeout to ensure layout is complete
+                    setTimeout(() => {
+                        resizeCtaCanvas();
+                        animateCtaWaves();
+                    }, 100);
+                });
+            } else {
+                // DOM already loaded, but wait a bit for layout
+                setTimeout(() => {
+                    resizeCtaCanvas();
+                    animateCtaWaves();
+                }, 100);
+            }
         })();
     </script>
 </body>
