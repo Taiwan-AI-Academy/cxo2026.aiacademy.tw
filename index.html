@@ -677,6 +677,8 @@
     <!-- CTA Section -->
     <section id="register" class="py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-t from-prestigeGold/10 to-obsidian z-0"></div>
+        <!-- Animated Circles Canvas -->
+        <canvas id="cta-circles-canvas" class="absolute inset-0 w-full h-full z-[1] pointer-events-none"></canvas>
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center fade-up">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Empower Your Board with AI Governance</h2>
             <p class="text-xl text-gray-300 mb-10 font-light">
@@ -911,6 +913,92 @@
                 closeSpeakerModal();
             }
         });
+
+        // CTA Section Animated Wave Lines
+        (function() {
+            const ctaCanvas = document.getElementById('cta-circles-canvas');
+            if (!ctaCanvas) return;
+
+            const ctaCtx = ctaCanvas.getContext('2d');
+            let ctaWidth, ctaHeight;
+            let time = 0;
+
+            const LINE_COUNT = 22;
+            const BASE_AMPLITUDE = 60;
+            const FREQUENCY = 0.003;
+            const WAVE_SPEED = 0.008;
+
+            function resizeCtaCanvas() {
+                const section = ctaCanvas.parentElement;
+                ctaWidth = ctaCanvas.width = section.offsetWidth;
+                ctaHeight = ctaCanvas.height = section.offsetHeight;
+            }
+
+            function drawWaveLine(index) {
+                // Phase offset creates the time-sequential overlapping effect
+                const phaseOffset = index * 0.15;
+                // Y offset spreads lines vertically with varying gaps
+                const baseY = ctaHeight * 0.5 + (index - LINE_COUNT / 2) * 8;
+
+                ctaCtx.beginPath();
+
+                for (let x = 0; x <= ctaWidth; x += 2) {
+                    // Multiple sine waves combined for organic movement
+                    const wave1 = Math.sin(x * FREQUENCY + time * WAVE_SPEED + phaseOffset) * BASE_AMPLITUDE;
+                    const wave2 = Math.sin(x * FREQUENCY * 2.1 + time * WAVE_SPEED * 0.7 + phaseOffset * 1.3) * BASE_AMPLITUDE * 0.3;
+                    const wave3 = Math.sin(x * FREQUENCY * 0.5 + time * WAVE_SPEED * 1.2 - phaseOffset * 0.5) * BASE_AMPLITUDE * 0.2;
+
+                    const y = baseY + wave1 + wave2 + wave3;
+
+                    if (x === 0) {
+                        ctaCtx.moveTo(x, y);
+                    } else {
+                        ctaCtx.lineTo(x, y);
+                    }
+                }
+
+                // Opacity varies by line position - center lines brighter
+                const distFromCenter = Math.abs(index - LINE_COUNT / 2) / (LINE_COUNT / 2);
+                const opacity = 0.18 - distFromCenter * 0.10;
+
+                // Alternate between gold and blue with gradient
+                const gradient = ctaCtx.createLinearGradient(0, 0, ctaWidth, 0);
+                if (index % 2 === 0) {
+                    gradient.addColorStop(0, `rgba(212, 175, 55, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(212, 175, 55, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(255, 229, 136, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(212, 175, 55, ${opacity * 0.3})`);
+                } else {
+                    gradient.addColorStop(0, `rgba(0, 212, 255, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(0, 212, 255, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(100, 230, 255, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(0, 212, 255, ${opacity * 0.3})`);
+                }
+
+                ctaCtx.strokeStyle = gradient;
+                ctaCtx.lineWidth = 1;
+                ctaCtx.stroke();
+            }
+
+            function animateCtaWaves() {
+                ctaCtx.clearRect(0, 0, ctaWidth, ctaHeight);
+
+                // Draw all wave lines
+                for (let i = 0; i < LINE_COUNT; i++) {
+                    drawWaveLine(i);
+                }
+
+                time += 1;
+                requestAnimationFrame(animateCtaWaves);
+            }
+
+            window.addEventListener('resize', () => {
+                resizeCtaCanvas();
+            });
+
+            resizeCtaCanvas();
+            animateCtaWaves();
+        })();
     </script>
 </body>
 </html>
