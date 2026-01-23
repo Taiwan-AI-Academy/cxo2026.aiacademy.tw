@@ -77,11 +77,16 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
         
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
         .glass-card-hover:hover {
-            border-color: rgba(189, 161, 108, 0.5);
-            background: rgba(10, 30, 61, 0.6);
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
+            border-color: rgba(189, 161, 108, 0.8);
+            border-width: 3px;
+            background: rgba(10, 30, 61, 0.7);
+            transform: translateY(-14px);
+            box-shadow: 0 20px 60px rgba(189, 161, 108, 0.3), 0 0 40px rgba(189, 161, 108, 0.15);
         }
 
         /* Text Gradients */
@@ -192,7 +197,7 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <!-- AIA Logo -->
-                    <img src="assets/logo-eng-horizon-white.svg" alt="台灣人工智慧學校" class="h-10 w-auto">
+                    <img src="assets/AIA-logo-white.svg" alt="台灣人工智慧學校" class="h-14 w-auto">
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -223,10 +228,22 @@
                 2026 AI Masterclass for Board Members
             </p>
 
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 fade-up" style="line-height: 1.2;">
-                第一屆全國董監事 <br>
-                <span class="text-gradient-gold">AI 大講堂</span>
-            </h1>
+            <div class="flex flex-row items-center justify-center gap-4 md:gap-8 mb-8 fade-up">
+                <!-- Left: Big AI -->
+                <div class="font-bold leading-none text-prestigeGold" style="font-size: clamp(8rem, 20vw, 12rem);">
+                    AI
+                </div>
+                
+                <!-- Right: Two lines of text -->
+                <div class="flex flex-col items-center md:items-start justify-center">
+                    <div class="text-4xl md:text-6xl font-bold text-white tracking-widest mb-1 md:mb-2 drop-shadow-lg" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+                        董監事
+                    </div>
+                    <div class="text-4xl md:text-6xl font-bold text-white tracking-widest drop-shadow-lg" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+                        大講堂
+                    </div>
+                </div>
+            </div>
 
             <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light tracking-wide fade-up delay-100">
                 上市櫃公司董監事治理主管 <span class="text-white font-medium border-b border-prestigeGold/50 pb-1">AI 必修課</span> 唯一選擇
@@ -234,12 +251,12 @@
 
             <div class="mt-12 flex justify-center fade-up delay-200">
                 <!-- Glass Info Card -->
-                <div class="glass-card p-6 md:p-8 rounded-lg max-w-4xl w-full flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="text-left flex-1 border-r border-white/10 pr-6">
+                <div class="glass-card p-6 md:p-8 rounded-lg max-w-4xl w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="text-left w-full md:flex-1 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
                         <div class="text-xs text-gray-400 uppercase tracking-widest mb-1"><i class="fa-regular fa-calendar mr-2"></i>Date</div>
                         <div class="text-xl text-white font-serif">2026.04.28 <span class="text-sm font-sans text-gray-400 ml-1">(二) 09:00-16:30</span></div>
                     </div>
-                    <div class="text-left flex-1">
+                    <div class="text-left w-full md:flex-1">
                         <div class="text-xs text-gray-400 uppercase tracking-widest mb-1"><i class="fa-solid fa-location-dot mr-2"></i>Venue</div>
                         <div class="text-lg text-white">台北萬豪酒店 <span class="text-sm text-gray-400 block">5F 萬豪廳</span></div>
                     </div>
@@ -248,7 +265,7 @@
 
             <!-- Organizer Badge -->
             <div class="absolute bottom-8 right-8 text-right fade-up delay-300">
-                <img src="assets/logo-eng-horizon-white.svg" alt="台灣人工智慧學校" class="h-8 w-auto ml-auto opacity-70">
+                <img src="assets/AIA-logo-white.svg" alt="台灣人工智慧學校" class="h-8 w-auto ml-auto opacity-70">
             </div>
 
             <div class="mt-10 fade-up delay-300">
@@ -351,7 +368,7 @@
                 <!-- Speaker 1: 陳伶志 -->
                 <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('chen')">
                     <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
-                        <img src="assets/1-chen.jpeg" alt="陳伶志" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/1-chen.jpeg" alt="陳伶志" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h4 class="text-lg font-bold text-white">陳伶志</h4>
@@ -363,7 +380,7 @@
                 <!-- Speaker 2: 連賢明 -->
                 <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('lien')">
                     <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
-                        <img src="assets/2-lien.jpg" alt="連賢明" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/2-lien.jpg" alt="連賢明" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h4 class="text-lg font-bold text-white">連賢明</h4>
@@ -375,7 +392,7 @@
                 <!-- Speaker 3: 余孝先 -->
                 <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('yu')">
                     <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
-                        <img src="assets/3-yu.jpg" alt="余孝先" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/3-yu.jpg" alt="余孝先" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h4 class="text-lg font-bold text-white">余孝先</h4>
@@ -387,7 +404,7 @@
                 <!-- Speaker 4: 李家岩 -->
                 <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('lee')">
                     <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
-                        <img src="assets/4-lee.jpg" alt="李家岩" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/4-lee.jpg" alt="李家岩" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h4 class="text-lg font-bold text-white">李家岩</h4>
@@ -479,10 +496,10 @@
                             </div>
                             <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
                                 <ul class="text-gray-300 text-sm space-y-2 list-none">
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>1. 全球 AI 法案解析：從「合規」變成董事會的風險治理責任</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>2. 企業隱私與資料產權：用「不造成傷害」設計 AI 治理，而不是事後補洞</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>3. AI 資安攻防：深偽與生成式攻擊讓傳統內控失效，必須升級為「可驗證的防禦」</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>4. 倫理與問責：把「黑天鵝」當常態，用透明與審計把錯誤成本降到可控</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>全球 AI 法案解析：從「合規」變成董事會的風險治理責任</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業隱私與資料產權：用「不造成傷害」設計 AI 治理，而不是事後補洞</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 資安攻防：深偽與生成式攻擊讓傳統內控失效，必須升級為「可驗證的防禦」</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>倫理與問責：把「黑天鵝」當常態，用透明與審計把錯誤成本降到可控</li>
                                 </ul>
                             </div>
                         </div>
@@ -503,11 +520,11 @@
                             </div>
                             <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
                                 <ul class="text-gray-300 text-sm space-y-2 list-none">
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>1. 2026 的重點: 地緣政治 and AI</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>2. 川普的貿易戰目標為何?</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>3. 台灣和美國的貿易協定</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>4. AI 產業對台灣經濟成長的影響</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>5. AI 產業對台灣經濟分配的影響</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>2026 的重點: 地緣政治 and AI</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>川普的貿易戰目標為何?</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>台灣和美國的貿易協定</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 產業對台灣經濟成長的影響</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 產業對台灣經濟分配的影響</li>
                                 </ul>
                             </div>
                         </div>
@@ -540,10 +557,10 @@
                             </div>
                             <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
                                 <ul class="text-gray-300 text-sm space-y-2 list-none">
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>1. 人工智慧原理：何為人工智慧？與智慧系統、機器學習、巨量資料之間的關連與異同</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>2. AI 近十年重大的進展：類神經網路與生成式 AI 的影響與挑戰</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>3. 如何迎向 AI 機遇：企業如何獲益於 AI 潮流並控管 AI 產生的風險</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>4. 展望與結語：AI 未來發展的與對社會的影響</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>人工智慧原理：何為人工智慧？與智慧系統、機器學習、巨量資料之間的關連與異同</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 近十年重大的進展：類神經網路與生成式 AI 的影響與挑戰</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>如何迎向 AI 機遇：企業如何獲益於 AI 潮流並控管 AI 產生的風險</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>展望與結語：AI 未來發展的與對社會的影響</li>
                                 </ul>
                             </div>
                         </div>
@@ -564,11 +581,11 @@
                             </div>
                             <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
                                 <ul class="text-gray-300 text-sm space-y-2 list-none">
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>1. 為何「數據 × AI」已成為企業競爭的核心引擎</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>2. 企業營運效率提升的四大關鍵場景</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>3. 領導人的「第七項修練」</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>4. AI 如何影響企業價值</li>
-                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>5. 企業導入 AI 決策的六大誤區與關鍵成功要素</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>為何「數據 × AI」已成為企業競爭的核心引擎</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業營運效率提升的四大關鍵場景</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>領導人的「第七項修練」</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 如何影響企業價值</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業導入 AI 決策的六大誤區與關鍵成功要素</li>
                                 </ul>
                             </div>
                         </div>
@@ -613,10 +630,6 @@
                         <div class="flex items-start gap-4 mb-4">
                             <i class="fa-solid fa-train-subway text-prestigeGold mt-1"></i>
                             <p class="text-gray-400">捷運劍南路站 (步行約 10 分鐘)</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-bed text-prestigeGold mt-1"></i>
-                            <p class="text-gray-400">提供萬豪酒店特惠方案給 4/27 有住房需求學員</p>
                         </div>
                     </div>
                 </div>
@@ -734,7 +747,10 @@
 
                         <div class="mt-10">
                             <p class="text-gray-300 text-base md:text-lg leading-relaxed">
-                                治理夥伴贊助方案，請洽詢台灣人工智慧學校 02-8512-3731*12 康小姐。
+                                治理夥伴贊助方案
+                            </p>
+                            <p class="text-gray-400 text-base md:text-md leading-relaxed">
+                                請洽詢台灣人工智慧學校 02-8512-3731*12 康小姐。
                             </p>
                         </div>
                     </div>
@@ -755,9 +771,9 @@
                 名額有限，僅限受邀企業與上市櫃公司高階主管報名。<br>
                 掌握 AI 時代的治理權杖，從這一堂課開始。
             </p>
-            <button class="bg-prestigeGold hover:bg-prestigeGoldHover text-obsidian font-bold text-lg px-12 py-4 rounded-sm tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(189,161,108,0.4)] hover:shadow-[0_0_40px_rgba(189,161,108,0.6)]">
+            <a href="https://neti.cc/3xqq9o3" target="_blank" class="inline-block bg-prestigeGold hover:bg-prestigeGoldHover text-obsidian font-bold text-lg px-12 py-4 rounded-sm tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(189,161,108,0.4)] hover:shadow-[0_0_40px_rgba(189,161,108,0.6)]">
                 立即預約席次
-            </button>
+            </a>
             <p class="mt-6 text-xs text-gray-500 uppercase tracking-widest">費用：每人 NT$ 6,600 (含稅)</p>
         </div>
     </section>
@@ -772,10 +788,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-gray-500 text-sm mb-4 md:mb-0">
                 &copy; 2026 Taiwan AI Academy. All Rights Reserved.
-            </div>
-            <div class="flex space-x-6">
-                <a href="#" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="text-gray-500 hover:text-white transition-colors">Contact Support</a>
             </div>
         </div>
     </footer>
