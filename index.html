@@ -23,10 +23,11 @@
                 extend: {
                     colors: {
                         obsidian: '#050b14',
-                        deepBlue: '#0A1E3D',
-                        techBlue: '#00D4FF',
-                        prestigeGold: '#D4AF37',
-                        prestigeGoldHover: '#B5952F',
+                        deepBlue: '#1e3a8a',
+                        techBlue: '#bda16c', // Foreground color
+                        prestigeGold: '#bda16c',
+                        nobleGold: '#bda16c',
+                        prestigeGoldHover: '#a8905a', // Darker variant for hover
                         glass: 'rgba(255, 255, 255, 0.05)',
                         glassBorder: 'rgba(255, 255, 255, 0.1)',
                     },
@@ -56,13 +57,15 @@
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37; 
+            background: #bda16c; 
         }
 
         body {
-            background-color: #050b14;
+            background: radial-gradient(circle at center, #1e3a8a 0%, #0a1528 50%, #050b14 100%);
+            min-height: 100vh;
             color: #f8fafc;
             overflow-x: hidden;
+            background-attachment: fixed; /* Ensure gradient stays fixed */
         }
 
         /* Glassmorphism Card Style */
@@ -75,7 +78,7 @@
         }
         
         .glass-card-hover:hover {
-            border-color: rgba(212, 175, 55, 0.5);
+            border-color: rgba(189, 161, 108, 0.5);
             background: rgba(10, 30, 61, 0.6);
             transform: translateY(-2px);
             transition: all 0.3s ease;
@@ -83,7 +86,7 @@
 
         /* Text Gradients */
         .text-gradient-gold {
-            background: linear-gradient(to right, #D4AF37, #FFE588, #D4AF37);
+            background: linear-gradient(to right, #bda16c, #d4b88a, #bda16c);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -92,7 +95,7 @@
         }
         
         .text-gradient-blue {
-            background: linear-gradient(to right, #00D4FF, #ffffff);
+            background: linear-gradient(to right, #bda16c, #ffffff);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -128,7 +131,7 @@
 
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(189, 161, 108, 0.3), transparent);
             margin: 0 auto;
             width: 80%;
         }
@@ -145,11 +148,11 @@
             background: rgba(10, 30, 61, 0.7);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(189, 161, 108, 0.3);
             border-right: none;
             border-radius: 8px 0 0 8px;
             padding: 20px 12px;
-            color: #D4AF37;
+            color: #bda16c;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 0.2em;
@@ -164,9 +167,9 @@
         .floating-cta:hover {
             opacity: 1;
             background: rgba(10, 30, 61, 0.9);
-            border-color: rgba(212, 175, 55, 0.6);
+            border-color: rgba(189, 161, 108, 0.6);
             padding-right: 14px;
-            box-shadow: -4px 0 20px rgba(212, 175, 55, 0.2);
+            box-shadow: -4px 0 20px rgba(189, 161, 108, 0.2);
         }
 
         .floating-cta:active {
@@ -216,7 +219,7 @@
         </div>
         
         <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-obsidian/30 via-obsidian/80 to-obsidian z-[1]"></div>
+        <div class="absolute inset-0 bg-gradient-radial from-deepBlue/30 via-deepBlue/60 to-obsidian/90 z-[1]" style="background: radial-gradient(circle at center, rgba(30, 58, 138, 0.3) 0%, rgba(30, 58, 138, 0.6) 50%, rgba(5, 11, 20, 0.9) 100%);"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
@@ -264,7 +267,7 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-24 relative bg-gray-900/50">
+    <section id="about" class="py-24 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 fade-up">
                 <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">ABOUT</h2>
@@ -293,7 +296,7 @@
     </section>
 
     <!-- Impact Stats Section -->
-    <section id="impact" class="py-24 relative bg-obsidian">
+    <section id="impact" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">IMPACT</h2>
@@ -346,7 +349,7 @@
     <div class="section-divider"></div>
 
     <!-- Speakers Section -->
-    <section id="speakers" class="py-24 bg-gradient-to-b from-obsidian to-deepBlue/20">
+    <section id="speakers" class="py-24 bg-gradient-to-b from-transparent to-deepBlue/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">Keynote Speakers</h2>
@@ -441,7 +444,7 @@
     </div>
 
     <!-- Agenda Section -->
-    <section id="agenda" class="py-24 bg-obsidian">
+    <section id="agenda" class="py-24">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">Agenda</h2>
@@ -604,7 +607,7 @@
     </section>
 
     <!-- Venue Section -->
-    <section id="venue" class="py-24 bg-gray-900 border-t border-white/5">
+    <section id="venue" class="py-24 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Venue -->
@@ -651,7 +654,7 @@
     </section>
 
     <!-- Gifts Section -->
-    <section id="gifts" class="py-24 bg-obsidian">
+    <section id="gifts" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">GIFTS</h2>
@@ -693,7 +696,7 @@
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" class="py-24 bg-gray-900/50">
+    <section id="partners" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-prestigeGold text-sm font-bold tracking-widest uppercase mb-3">PARTNERS</h2>
@@ -725,7 +728,7 @@
 
     <!-- CTA Section -->
     <section id="register" class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-t from-prestigeGold/10 to-obsidian z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-prestigeGold/10 via-deepBlue/50 to-obsidian z-0"></div>
         <!-- Animated Circles Canvas -->
         <canvas id="cta-circles-canvas" class="absolute inset-0 w-full h-full z-[1] pointer-events-none"></canvas>
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center fade-up">
@@ -734,7 +737,7 @@
                 名額有限，僅限受邀企業與上市櫃公司高階主管報名。<br>
                 掌握 AI 時代的治理權杖，從這一堂課開始。
             </p>
-            <button class="bg-prestigeGold hover:bg-prestigeGoldHover text-obsidian font-bold text-lg px-12 py-4 rounded-sm tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)]">
+            <button class="bg-prestigeGold hover:bg-prestigeGoldHover text-obsidian font-bold text-lg px-12 py-4 rounded-sm tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(189,161,108,0.4)] hover:shadow-[0_0_40px_rgba(189,161,108,0.6)]">
                 立即預約席次
             </button>
             <p class="mt-6 text-xs text-gray-500 uppercase tracking-widest">費用：每人 NT$ 6,600 (含稅)</p>
@@ -823,7 +826,7 @@
                     draw() {
                         ctx.beginPath();
                         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                        ctx.fillStyle = 'rgba(0, 212, 255, 0.4)'; // Tech Blue
+                        ctx.fillStyle = 'rgba(189, 161, 108, 0.4)'; // Foreground color
                         ctx.fill();
                     }
                 }
@@ -853,7 +856,7 @@
                             
                             if (dist < 150) {
                                 ctx.beginPath();
-                                ctx.strokeStyle = `rgba(0, 212, 255, ${0.15 - dist/1000})`;
+                                ctx.strokeStyle = `rgba(189, 161, 108, ${0.15 - dist/1000})`;
                                 ctx.lineWidth = 0.5;
                                 ctx.moveTo(p.x, p.y);
                                 ctx.lineTo(p2.x, p2.y);
@@ -880,10 +883,10 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.classList.add('bg-obsidian/90');
+                nav.classList.add('bg-gradient-to-b', 'from-deepBlue/90', 'to-obsidian/90');
                 nav.classList.remove('glass-card');
             } else {
-                nav.classList.remove('bg-obsidian/90');
+                nav.classList.remove('bg-gradient-to-b', 'from-deepBlue/90', 'to-obsidian/90');
                 nav.classList.add('glass-card');
             }
         });
@@ -1028,15 +1031,15 @@
                 // Alternate between gold and blue with gradient
                 const gradient = ctaCtx.createLinearGradient(0, 0, ctaWidth, 0);
                 if (index % 2 === 0) {
-                    gradient.addColorStop(0, `rgba(212, 175, 55, ${opacity * 0.3})`);
-                    gradient.addColorStop(0.3, `rgba(212, 175, 55, ${opacity})`);
-                    gradient.addColorStop(0.7, `rgba(255, 229, 136, ${opacity})`);
-                    gradient.addColorStop(1, `rgba(212, 175, 55, ${opacity * 0.3})`);
+                    gradient.addColorStop(0, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(189, 161, 108, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(212, 184, 138, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(189, 161, 108, ${opacity * 0.3})`);
                 } else {
-                    gradient.addColorStop(0, `rgba(0, 212, 255, ${opacity * 0.3})`);
-                    gradient.addColorStop(0.3, `rgba(0, 212, 255, ${opacity})`);
-                    gradient.addColorStop(0.7, `rgba(100, 230, 255, ${opacity})`);
-                    gradient.addColorStop(1, `rgba(0, 212, 255, ${opacity * 0.3})`);
+                    gradient.addColorStop(0, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(189, 161, 108, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(212, 184, 138, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(189, 161, 108, ${opacity * 0.3})`);
                 }
 
                 ctaCtx.strokeStyle = gradient;
