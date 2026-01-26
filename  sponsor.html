@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 董監事 AI 大講堂 | CEO AI Masterclass</title>
+    <meta name="description" content="台灣上市櫃公司董監事與高階主管 AI 治理必修課程。由台灣人工智慧學校主辦，邀集權威師資，探討 AI 治理新標準、經濟趨勢與數據決策，協助企業掌握 AI 時代的關鍵競爭力。">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cxo2026.aiacademy.tw/">
+    <meta property="og:title" content="2026 董監事 AI 大講堂 | CEO AI Masterclass">
+    <meta property="og:description" content="台灣上市櫃公司董監事與高階主管 AI 治理必修課程。由台灣人工智慧學校主辦，邀集權威師資，探討 AI 治理新標準、經濟趨勢與數據決策，協助企業掌握 AI 時代的關鍵競爭力。">
+    <meta property="og:image" content="https://cxo2026.aiacademy.tw/assets/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cxo2026.aiacademy.tw/">
+    <meta property="twitter:title" content="2026 董監事 AI 大講堂 | CEO AI Masterclass">
+    <meta property="twitter:description" content="台灣上市櫃公司董監事與高階主管 AI 治理必修課程。由台灣人工智慧學校主辦，邀集權威師資，探討 AI 治理新標準、經濟趨勢與數據決策，協助企業掌握 AI 時代的關鍵競爭力。">
+    <meta property="twitter:image" content="https://cxo2026.aiacademy.tw/assets/preview.png">
+    
+    <!-- Google Fonts: Noto Sans TC for content, Playfair Display for prestige numbers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN for single file portability) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#050b14',
+                        deepBlue: '#1e3a8a',
+                        techBlue: '#bda16c', // Foreground color
+                        prestigeGold: '#bda16c',
+                        nobleGold: '#bda16c',
+                        prestigeGoldHover: '#a8905a', // Darker variant for hover
+                        glass: 'rgba(255, 255, 255, 0.05)',
+                        glassBorder: 'rgba(255, 255, 255, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'hero-glow': 'conic-gradient(from 90deg at 50% 50%, #000000 0%, #0A1E3D 50%, #000000 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050b14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bda16c; 
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1e3a8a 0%, #0a1528 50%, #050b14 100%);
+            min-height: 100vh;
+            color: #f8fafc;
+            overflow-x: hidden;
+            background-attachment: fixed; /* Ensure gradient stays fixed */
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(10, 30, 61, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .glass-card-hover:hover {
+            border-color: rgba(189, 161, 108, 0.8);
+            border-width: 3px;
+            background: rgba(10, 30, 61, 0.7);
+            transform: translateY(-14px);
+            box-shadow: 0 20px 60px rgba(189, 161, 108, 0.3), 0 0 40px rgba(189, 161, 108, 0.15);
+        }
+
+        /* Text Gradients */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #bda16c, #d4b88a, #bda16c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+        
+        .text-gradient-blue {
+            background: linear-gradient(to right, #bda16c, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Animation Utilities */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Canvas Positioning */
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(189, 161, 108, 0.3), transparent);
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        /* Floating CTA Button */
+        .floating-cta {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 40;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            background: rgba(10, 30, 61, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(189, 161, 108, 0.3);
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+            padding: 20px 12px;
+            color: #bda16c;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.75;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .floating-cta:hover {
+            opacity: 1;
+            background: rgba(10, 30, 61, 0.9);
+            border-color: rgba(189, 161, 108, 0.6);
+            padding-right: 14px;
+            box-shadow: -4px 0 20px rgba(189, 161, 108, 0.2);
+        }
+
+        .floating-cta:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        /* Hide on mobile to avoid blocking content */
+        @media (max-width: 768px) {
+            .floating-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-prestigeGold selection:text-obsidian">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass-card border-b border-white/5" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- AIA Logo -->
+                    <img src="assets/AIA-logo-white.svg" alt="台灣人工智慧學校" class="h-14 w-auto">
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#about" class="hover:text-prestigeGold transition-colors text-sm xl:text-base tracking-wider uppercase">關於講堂</a>
+                        <a href="#impact" class="hover:text-prestigeGold transition-colors text-sm xl:text-base tracking-wider uppercase">影響力</a>
+                        <a href="#speakers" class="hover:text-prestigeGold transition-colors text-sm xl:text-base tracking-wider uppercase">講者陣容</a>
+                        <a href="#agenda" class="hover:text-prestigeGold transition-colors text-sm xl:text-base tracking-wider uppercase">議程規劃</a>
+                        <a href="#certificate" class="hover:text-prestigeGold transition-colors text-sm xl:text-base tracking-wider uppercase">完課證書</a>
+                        <a href="#partners" class="hover:text-prestigeGold transition-colors text-sm xl:text-base tracking-wider uppercase">治理夥伴</a>
+                        <a href="#venue" class="hover:text-prestigeGold transition-colors text-sm xl:text-base tracking-wider uppercase">場地資訊</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:block">
+                        <a href="https://neti.cc/3xqq9o3" target="_blank" class="bg-transparent border border-prestigeGold text-prestigeGold hover:bg-prestigeGold hover:text-obsidian px-6 py-2 rounded-sm text-base font-semibold transition-all duration-300 uppercase tracking-widest">
+                            立即預約席次
+                        </a>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <button type="button" class="lg:hidden text-gray-400 hover:text-white focus:outline-none" id="mobile-menu-button">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 glass-card border-t border-white/5">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-white hover:text-prestigeGold hover:bg-white/5 rounded-md">關於講堂</a>
+                <a href="#impact" class="block px-3 py-2 text-base font-medium text-white hover:text-prestigeGold hover:bg-white/5 rounded-md">影響力</a>
+                <a href="#speakers" class="block px-3 py-2 text-base font-medium text-white hover:text-prestigeGold hover:bg-white/5 rounded-md">講者陣容</a>
+                <a href="#agenda" class="block px-3 py-2 text-base font-medium text-white hover:text-prestigeGold hover:bg-white/5 rounded-md">議程規劃</a>
+                <a href="#certificate" class="block px-3 py-2 text-base font-medium text-white hover:text-prestigeGold hover:bg-white/5 rounded-md">完課證書</a>
+                <a href="#partners" class="block px-3 py-2 text-base font-medium text-white hover:text-prestigeGold hover:bg-white/5 rounded-md">治理夥伴</a>
+                <a href="#venue" class="block px-3 py-2 text-base font-medium text-white hover:text-prestigeGold hover:bg-white/5 rounded-md">場地資訊</a>
+                <a href="https://neti.cc/3xqq9o3" target="_blank" class="block px-3 py-2 text-base font-bold text-prestigeGold hover:bg-white/5 rounded-md">立即預約席次</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        
+        <!-- Animated Wave Lines Canvas -->
+        <canvas id="hero-dots-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-radial from-deepBlue/30 via-deepBlue/60 to-obsidian/90 z-[1]" style="background: radial-gradient(circle at center, rgba(30, 58, 138, 0.3) 0%, rgba(30, 58, 138, 0.6) 50%, rgba(5, 11, 20, 0.9) 100%);"></div>
+
+        <div class="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
+
+            <!-- Logo Section - Full Width -->
+            <div class="flex items-center justify-center mb-6 fade-up">
+                <img src="assets/CXO-LOGO.svg" alt="AI 董監事大講堂" class="w-full max-w-7xl h-auto drop-shadow-2xl">
+            </div>
+
+            <!-- Subtitle moved below logo -->
+            <p class="text-xl md:text-2xl text-techBlue font-medium tracking-wider mb-6 fade-up delay-100">
+                2026 AI Masterclass for Board Members
+            </p>
+
+            <p class="mt-2 max-w-2xl mx-auto text-xl md:text-2xl text-gray-300 font-light tracking-wide fade-up delay-200">
+                上市櫃公司董監事治理主管 <span class="text-white font-medium border-b border-prestigeGold/50 pb-1">AI 必修課</span> 唯一選擇
+            </p>
+
+            <div class="mt-8 flex justify-center fade-up delay-300">
+                <!-- Glass Info Card -->
+                <div class="glass-card p-6 md:p-8 rounded-lg max-w-4xl w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="text-left w-full md:flex-1 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+                        <div class="text-base text-gray-400 uppercase tracking-widest mb-1"><i class="fa-regular fa-calendar mr-2"></i>Date</div>
+                        <div class="text-2xl text-white font-serif">2026.04.28 <span class="text-base font-sans text-gray-400 ml-1">(二) 09:00-16:30</span></div>
+                    </div>
+                    <div class="text-left w-full md:flex-1">
+                        <div class="text-base text-gray-400 uppercase tracking-widest mb-1"><i class="fa-solid fa-location-dot mr-2"></i>Venue</div>
+                        <div class="text-xl text-white">台北萬豪酒店 <span class="text-base text-gray-400 block">5F 萬豪廳</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 fade-up delay-400">
+                <i class="fa-solid fa-chevron-down text-prestigeGold/50 animate-bounce text-3xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-3">ABOUT</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">關於論壇</h3>
+                <div class="w-16 h-0.5 bg-prestigeGold mx-auto mt-6"></div>
+            </div>
+
+            <div class="text-center fade-up delay-100">
+                <p class="text-2xl md:text-3xl text-techBlue font-medium mb-8">
+                    「AI 不只是技術革新，更是企業治理的新挑戰」
+                </p>
+
+                <div class="text-gray-300 text-lg md:text-xl leading-relaxed space-y-6 text-left md:text-center max-w-4xl mx-auto">
+                    <p>
+                        <strong class="text-white">「2026 董監事 AI 大講堂」</strong>由財團法人台灣人工智慧學校基金會主辦，旨在協助台灣產業高階決策者掌握 AI 治理新標準與經濟動能。透過系統化的議程，從法規合規、資安防禦、總體經濟影響，到生成式 AI 的商業模式再造，為企業領導層提供全方位的 AI 轉型藍圖。
+                    </p>
+                    <p>
+                        本課程提供董監進修時數認證，協助企業領導人在 AI 時代建立完整的治理框架，掌握 AI 帶來的風險與機遇，引領企業穩健前行。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Impact Stats Section -->
+    <section id="impact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-3">IMPACT</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">論壇影響力</h3>
+                <div class="w-16 h-0.5 bg-prestigeGold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 fade-up delay-100">
+                <!-- Stat 1 -->
+                <div class="glass-card p-6 md:p-8 rounded-sm text-center">
+                    <div class="text-techBlue text-4xl mb-4">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-serif text-white mb-2" data-count="8">8</div>
+                    <div class="text-base text-gray-400 uppercase tracking-wider">次年會</div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="glass-card p-6 md:p-8 rounded-sm text-center">
+                    <div class="text-techBlue text-4xl mb-4">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-serif text-white mb-2" data-count="1466">1,466</div>
+                    <div class="text-base text-gray-400 uppercase tracking-wider">訓練企業數</div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="glass-card p-6 md:p-8 rounded-sm text-center">
+                    <div class="text-techBlue text-4xl mb-4">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-serif text-white mb-2" data-count="12098">12,098</div>
+                    <div class="text-base text-gray-400 uppercase tracking-wider">訓練員人數</div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="glass-card p-6 md:p-8 rounded-sm text-center">
+                    <div class="text-techBlue text-4xl mb-4">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-serif text-white mb-2" data-count="498">498</div>
+                    <div class="text-base text-gray-400 uppercase tracking-wider">講師人數</div>
+                </div>
+            </div>
+
+            <p class="text-center text-base text-gray-500 mt-8 fade-up delay-200">* 數據統計自台灣人工智慧學校歷屆課程</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-24 bg-gradient-to-b from-transparent to-deepBlue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-3">Keynote Speakers</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">講者陣容</h3>
+                <div class="w-16 h-0.5 bg-prestigeGold mx-auto mt-6"></div>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">匯聚產官學研頂尖專家，為企業決策者提供最前瞻的 AI 戰略視野。</p>
+            </div>
+
+            <!-- Speaker Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 fade-up delay-100">
+
+                <!-- Speaker 1: 陳伶志 -->
+                <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('chen')">
+                    <!-- Label -->
+                    <div class="bg-gradient-to-r from-prestigeGold/90 to-prestigeGold/80 py-2 px-4 text-center">
+                        <span class="text-obsidian text-sm font-bold tracking-wider">治理/風險</span>
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
+                        <img src="assets/1-chen.jpeg" alt="陳伶志" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-xl font-bold text-white">陳伶志</h4>
+                        <p class="text-base text-gray-400 mt-1">台灣人工智慧學校 執行長</p>
+                        <p class="text-base text-gray-500">中央研究院資訊服務處處長</p>
+                    </div>
+                </div>
+
+                <!-- Speaker 2: 連賢明 -->
+                <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('lien')">
+                    <!-- Label -->
+                    <div class="bg-gradient-to-r from-prestigeGold/90 to-prestigeGold/80 py-2 px-4 text-center">
+                        <span class="text-obsidian text-sm font-bold tracking-wider">趨勢/經濟</span>
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
+                        <img src="assets/2-lien.jpg" alt="連賢明" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-xl font-bold text-white">連賢明</h4>
+                        <p class="text-base text-gray-400 mt-1">中華經濟研究院 院長</p>
+                        <p class="text-base text-gray-500">政大財政學系 特聘教授</p>
+                    </div>
+                </div>
+
+                <!-- Speaker 3: 余孝先 -->
+                <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('yu')">
+                    <!-- Label -->
+                    <div class="bg-gradient-to-r from-prestigeGold/90 to-prestigeGold/80 py-2 px-4 text-center">
+                        <span class="text-obsidian text-sm font-bold tracking-wider">機會/技術</span>
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
+                        <img src="assets/3-yu.jpg" alt="余孝先" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-xl font-bold text-white">余孝先</h4>
+                        <p class="text-base text-gray-400 mt-1">清華大學科技管理學院</p>
+                        <p class="text-base text-gray-500">兼任教授</p>
+                    </div>
+                </div>
+
+                <!-- Speaker 4: 李家岩 -->
+                <div class="glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer group" onclick="openSpeakerModal('lee')">
+                    <!-- Label -->
+                    <div class="bg-gradient-to-r from-prestigeGold/90 to-prestigeGold/80 py-2 px-4 text-center">
+                        <span class="text-obsidian text-sm font-bold tracking-wider">決策/數據</span>
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
+                        <img src="assets/4-lee.jpg" alt="李家岩" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-xl font-bold text-white">李家岩</h4>
+                        <p class="text-base text-gray-400 mt-1">臺灣大學管理學院 副院長</p>
+                        <p class="text-base text-gray-500">EiMBA 執行長</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Course Summary Speaker -->
+            <div class="mt-8 text-center fade-up delay-200">
+                <p class="text-gray-500 text-base mb-4">課程總結</p>
+                <div class="inline-block glass-card rounded-lg overflow-hidden glass-card-hover cursor-pointer" onclick="openSpeakerModal('tsai')">
+                    <div class="flex items-center gap-6 p-8">
+                        <img src="assets/5-tsai.png" alt="蔡明順" class="w-28 h-28 rounded-full object-cover border-2 border-prestigeGold/30">
+                        <div class="text-left">
+                            <h4 class="text-3xl font-bold text-white">蔡明順</h4>
+                            <p class="text-xl text-gray-400">台灣人工智慧學校 校務長</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker Modal -->
+    <div id="speakerModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onclick="closeSpeakerModal(event)">
+        <div class="glass-card max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-lg p-6 md:p-8 relative" onclick="event.stopPropagation()">
+            <button onclick="closeSpeakerModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-shrink-0">
+                    <img id="modalSpeakerImg" src="" alt="" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-2 border-prestigeGold/30 mx-auto">
+                </div>
+                <div class="flex-1">
+                    <h3 id="modalSpeakerName" class="text-3xl font-bold text-white mb-2"></h3>
+                    <p id="modalSpeakerTitle" class="text-prestigeGold mb-4"></p>
+                    <div id="modalSpeakerBio" class="text-gray-300 text-base leading-relaxed"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm" onclick="closeCertificateModal(event)">
+        <div class="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center" onclick="event.stopPropagation()">
+             <button onclick="closeCertificateModal()" class="absolute -top-12 right-0 text-white hover:text-prestigeGold text-5xl focus:outline-none">&times;</button>
+            <img src="assets/certificate_resized.png" alt="證書範本" class="max-w-full max-h-[85vh] object-contain rounded-sm shadow-2xl border border-white/10">
+        </div>
+    </div>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-3">Agenda</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">講堂議程</h3>
+                <div class="w-16 h-0.5 bg-prestigeGold mx-auto mt-6"></div>
+            </div>
+
+            <div class="space-y-4">
+
+                <!-- Time Slot 08:30 -->
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-prestigeGold/20">
+                            <span class="text-white font-mono font-bold text-xl">08:30 - 09:00</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold">報到 ( 5F 萬豪廳 )</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 09:00 -->
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-prestigeGold/20">
+                            <span class="text-white font-mono font-bold text-xl">09:00 - 09:20</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold">主辦致詞 / 台灣人工智慧學校 陳伶志 執行長</h4>
+                            <h4 class="text-white text-xl font-bold mt-1">貴賓致詞 / 台灣證券交易所 李愛玲 總經理</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 09:20 -->
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-prestigeGold/30">
+                            <span class="text-white font-mono font-bold text-xl">09:20 - 10:50</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-prestigeGold text-2xl font-bold mb-3">全球 AI 治理新標準：從法規合規到資安防禦的信任藍圖</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-base font-semibold">陳伶志</span>
+                                <span class="text-gray-400 text-base">台灣人工智慧學校 執行長 / 中央研究院資訊服務處處長</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-base space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>全球 AI 法案解析：從「合規」變成董事會的風險治理責任</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業隱私與資料產權：用「不造成傷害」設計 AI 治理，而不是事後補洞</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 資安攻防：深偽與生成式攻擊讓傳統內控失效，必須升級為「可驗證的防禦」</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>倫理與問責：把「黑天鵝」當常態，用透明與審計把錯誤成本降到可控</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 10:50 -->
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-white/10">
+                            <span class="text-white font-mono text-base">10:50 - 11:10</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold">Coffee Break</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 11:10 -->
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-prestigeGold/30">
+                            <span class="text-white font-mono font-bold text-xl">11:10 - 12:40</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-prestigeGold text-2xl font-bold mb-3">AI 時代的台灣經濟：匯率、利率與 AI 動能的交織影響</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-base font-semibold">連賢明</span>
+                                <span class="text-gray-400 text-base">中華經濟研究院 院長</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-base space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>1. 2026 的重點: 地緣政治和 AI</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>2. 川普的貿易戰目標為何?</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>3. 台灣和美國的貿易協定</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>4. AI 產業對台灣經濟成長的影響</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>5. AI 產業對台灣經濟分配的影響</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 12:40 -->
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-white/10">
+                            <span class="text-white font-mono text-base">12:40 - 14:00</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold"><i class="fa-solid fa-utensils mr-2"></i>Lunch Time ( 3F 博覽廳 )</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 14:00 -->
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-prestigeGold/30">
+                            <span class="text-white font-mono font-bold text-xl">14:00 - 15:30</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-prestigeGold text-2xl font-bold mb-3">董監事對 AI 應有的認知：AI 原理、衝擊、機會與因應之道</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-base font-semibold">余孝先</span>
+                                <span class="text-gray-400 text-base">清華大學科技管理學院 兼任教授</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-base space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>人工智慧原理：何為人工智慧？與智慧系統、機器學習、巨量資料之間的關連與異同</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 近十年重大的進展：類神經網路與生成式 AI 的影響與挑戰</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>如何迎向 AI 機遇：企業如何獲益於 AI 潮流並控管 AI 產生的風險</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>展望與結語：AI 未來發展的與對社會的影響</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 15:30 -->
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-white/10">
+                            <span class="text-white font-mono text-base">15:30 - 15:50</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold">Coffee Break</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 15:50 -->
+                <div class="glass-card p-6 rounded-lg border-2 border-prestigeGold/50 bg-gradient-to-br from-prestigeGold/10 to-transparent fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-prestigeGold/30">
+                            <span class="text-white font-mono font-bold text-xl">15:50 - 16:20</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-prestigeGold text-2xl font-bold mb-3">數據驅動的決策革新：以 AI 優化企業營運效率與股東價值</h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-prestigeGold text-base font-semibold">李家岩</span>
+                                <span class="text-gray-400 text-base">臺灣大學管理學院 副院長暨 EiMBA 執行長</span>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                                <ul class="text-gray-300 text-base space-y-2 list-none">
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>為何「數據 × AI」已成為企業競爭的核心引擎</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業營運效率提升的四大關鍵場景</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>領導人的「第七項修練」</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>AI 如何影響企業價值</li>
+                                    <li><i class="fa-solid fa-angle-right text-prestigeGold mr-2"></i>企業導入 AI 決策的六大誤區與關鍵成功要素</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 16:20 -->
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-prestigeGold/20">
+                            <span class="text-white font-mono font-bold text-xl">16:20 - 16:30</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold mb-2">課程總結 蔡明順 台灣人工智慧學校 校務長</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slot 16:30 -->
+                <div class="glass-card p-6 rounded-lg fade-up">
+                    <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0 pb-2 md:pb-0 border-b md:border-b-0 border-white/10">
+                            <span class="text-white font-mono text-base">16:30 -</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white text-xl font-bold">證書領取</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Certificate Section -->
+    <section id="certificate" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-3">CERTIFICATION</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">完課證書</h3>
+                <div class="w-16 h-0.5 bg-prestigeGold mx-auto mt-6"></div>
+            </div>
+
+            <div class="fade-up delay-100">
+                <div class="glass-card p-6 md:p-10 rounded-lg max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                     <div class="w-full md:w-1/3 flex-shrink-0">
+                        <img src="assets/certificate_resized.png" alt="證書範本" class="w-full h-auto rounded-sm border border-white/10 shadow-2xl md:cursor-pointer hover:opacity-90 transition-opacity" onclick="openCertificateModal()">
+                     </div>
+                     <div class="w-full md:w-2/3 text-left">
+                        <p class="text-2xl md:text-3xl font-bold text-white mb-6 leading-relaxed">
+                            董監事/公司治理主管進修時數認證及<br><span class="text-prestigeGold">台灣人工智慧學校完課證書</span>
+                        </p>
+                        <div class="p-5 bg-white/5 border border-prestigeGold/20 rounded-sm">
+                            <span class="text-prestigeGold font-bold text-xl mb-2 block">時數登錄說明：</span>
+                            <p class="text-gray-300 text-lg leading-relaxed">
+                                全程參與者，將頒發完課證書，供您向證交所或櫃買中心申報（需完成簽到退）。
+                            </p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-3">PARTNERS</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">治理夥伴</h3>
+                <div class="w-16 h-0.5 bg-prestigeGold mx-auto mt-6"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto mb-16 fade-up delay-100">
+                <div class="glass-card rounded-lg overflow-hidden flex flex-col md:flex-row shadow-2xl">
+                    <!-- Main Visual -->
+                    <div class="md:w-1/2 relative min-h-[400px]">
+                        <img src="assets/wd-.jpg" alt="治理夥伴贊助方案" class="absolute inset-0 w-full h-full object-cover">
+                        <!-- Overlay for better text contrast if needed, but image is main visual -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/60 to-transparent md:bg-gradient-to-r"></div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-deepBlue/20 backdrop-blur-sm">
+                        <h3 class="text-4xl font-bold text-white mb-4 border-l-4 border-prestigeGold pl-4">治理夥伴贊助方案</h3>
+                        <p class="text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
+                            我們誠摯邀請認同 AI 治理理念的企業與組織，共同參與這場台灣最重要的 AI 治理盛會。
+                        </p>
+                        
+                        <ul class="space-y-6">
+                            <li class="flex items-start group">
+                                <span class="flex-shrink-0 w-2 h-2 mt-2.5 bg-prestigeGold rounded-full mr-4 group-hover:scale-125 transition-transform"></span>
+                                <div>
+                                    <span class="text-prestigeGold font-bold tracking-wider block mb-1 text-xl">夥伴權益</span>
+                                    <span class="text-gray-300 text-xl">包含品牌曝光、專屬邀請名額 200 位、VIP 接待等</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start group">
+                                <span class="flex-shrink-0 w-2 h-2 mt-2.5 bg-prestigeGold rounded-full mr-4 group-hover:scale-125 transition-transform"></span>
+                                <div>
+                                    <span class="text-prestigeGold font-bold tracking-wider block mb-1 text-xl">贊助名額</span>
+                                    <span class="text-gray-300 text-xl">限定 2-3 家金控集團</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start group">
+                                <span class="flex-shrink-0 w-2 h-2 mt-2.5 bg-prestigeGold rounded-full mr-4 group-hover:scale-125 transition-transform"></span>
+                                <div>
+                                    <span class="text-prestigeGold font-bold tracking-wider block mb-1 text-xl">贊助金額</span>
+                                    <span class="text-gray-300 text-xl">新台幣 250 萬元 (含稅)</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="mt-10">
+                            <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+                                治理夥伴贊助方案
+                            </p>
+                            <p class="text-gray-400 text-lg md:text-md leading-relaxed">
+                                請洽詢台灣人工智慧學校 02-8512-3731*12 康小姐。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="py-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Venue -->
+                <div class="fade-up">
+                    <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-6">Venue Information</h2>
+                    <h3 class="text-4xl font-bold text-white mb-3">活動地點</h3>
+                    <div class="w-16 h-0.5 bg-prestigeGold mb-6"></div>
+                    <div class="glass-card p-8 rounded-sm h-[450px] flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-3xl font-bold text-white mb-2">台北萬豪酒店</h4>
+                            <p class="text-xl text-gray-300 mb-4">5F 萬豪廳</p>
+                            <div class="flex items-start gap-4 mb-4">
+                                <i class="fa-solid fa-location-dot text-prestigeGold mt-1 flex-shrink-0"></i>
+                                <p class="text-gray-400">台北市中山區樂群二路199號</p>
+                            </div>
+                            <div class="flex items-start gap-4 mb-4">
+                                <i class="fa-solid fa-train-subway text-prestigeGold mt-1 flex-shrink-0"></i>
+                                <p class="text-gray-400">捷運劍南路站 3 號出口，左轉植福路，至敬業四路交叉口右轉，直行敬業四路 250 公尺</p>
+                            </div>
+                            <div class="flex items-start gap-4 mb-4">
+                                <i class="fa-solid fa-bus text-prestigeGold mt-1 flex-shrink-0"></i>
+                                <div class="text-gray-400 text-sm space-y-2">
+                                    <div><span class="text-prestigeGold font-semibold">A</span> 敬業四路(敬業四路&樂群三路口)：208、33、42、42區、553、72、藍20區、藍7</div>
+                                    <div><span class="text-prestigeGold font-semibold">B</span> 大直美堤花園二(敬業四路&樂群二路口)：268、42、42區、553、645、645副、棕20、紅3、紅3區、綠16、藍20區、藍26、藍7</div>
+                                    <div><span class="text-prestigeGold font-semibold">C</span> 大直美堤花園一(樂群二路上)：268、645、645副、677、棕20、紅3、紅3區、綠16、藍26</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-bed text-prestigeGold mt-1 flex-shrink-0"></i>
+                            <p class="text-gray-400">萬豪酒店提供特惠方案給 4/27 有住房需求學員，請洽酒店</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="fade-up delay-100">
+                    <h2 class="text-prestigeGold text-base font-bold tracking-widest uppercase mb-6">Location Map</h2>
+                    <h3 class="text-4xl font-bold text-white mb-3">交通位置</h3>
+                    <div class="w-16 h-0.5 bg-prestigeGold mb-6"></div>
+                    <div class="glass-card p-2 rounded-sm overflow-hidden h-[450px]">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.6328915654303!2d121.55672447579725!3d25.080428877786407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac0d57cba929%3A0xa49b99c29ceddf8a!2z5Y-w5YyX6JCs6LGq6YWS5bqX!5e0!3m2!1szh-TW!2stw!4v1768550317978!5m2!1szh-TW!2stw" 
+                            width="100%" 
+                            height="432" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-sm">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="register" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-prestigeGold/10 via-deepBlue/50 to-obsidian z-0"></div>
+        <!-- Animated Circles Canvas -->
+        <canvas id="cta-circles-canvas" class="absolute inset-0 w-full h-full z-[1] pointer-events-none"></canvas>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center fade-up">
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6">Empower Your Boards with AI Governance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto mb-10">
+                <div class="glass-card p-6 rounded-lg h-full">
+                    <h3 class="text-prestigeGold font-bold text-xl mb-3 border-b border-white/10 pb-2">招生對象</h3>
+                    <ul class="text-gray-300 space-y-2 list-none">
+                        <li class="flex items-start"><i class="fas fa-check text-prestigeGold mt-1.5 mr-2 text-base"></i><span>台灣上市櫃公司董事、監察人</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-prestigeGold mt-1.5 mr-2 text-base"></i><span>企業公司治理主管</span></li>
+                    </ul>
+                </div>
+                <div class="glass-card p-6 rounded-lg h-full">
+                    <h3 class="text-prestigeGold font-bold text-xl mb-3 border-b border-white/10 pb-2">學費標準</h3>
+                    <div class="text-gray-300 space-y-2">
+                        <p>每人 <span class="text-white font-semibold">6,600</span> 元含稅 <span class="text-base text-gray-400">(提供午餐與茶點)</span></p>
+                        <p class="text-base mt-3 pt-3 border-t border-white/10">
+                            <span class="block text-prestigeGold mb-1">團報及治理夥伴贊助方案</span>
+                            請洽詢台灣人工智慧學校 <br>
+                            <a href="tel:0285123731" class="hover:text-white transition-colors">02-8512-3731</a> 分機 12 康小姐
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://neti.cc/3xqq9o3" target="_blank" class="inline-block bg-prestigeGold hover:bg-prestigeGoldHover text-obsidian font-bold text-xl px-12 py-4 rounded-sm tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(189,161,108,0.4)] hover:shadow-[0_0_40px_rgba(189,161,108,0.6)]">
+                立即預約席次
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating CTA Button -->
+    <a href="https://neti.cc/3xqq9o3" target="_blank" class="floating-cta" aria-label="立即預約席次">
+        立即預約席次
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-gray-500 text-base mb-4 md:mb-0">
+                &copy; 2026 Taiwan AI Academy. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll Reveal Animation using Intersection Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Canvas Background Animation (Neural Network / Governance Nodes)
+        // Note: bg-canvas is no longer used since we switched to background image
+        // This code is kept for potential future use but is disabled
+        const canvas = document.getElementById('bg-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+                let width, height;
+                let particles = [];
+                
+                function resize() {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                }
+                
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * width;
+                        this.y = Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.5;
+                        this.vy = (Math.random() - 0.5) * 0.5;
+                        this.size = Math.random() * 2 + 1;
+                    }
+                    
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        
+                        if (this.x < 0 || this.x > width) this.vx *= -1;
+                        if (this.y < 0 || this.y > height) this.vy *= -1;
+                    }
+                    
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(189, 161, 108, 0.4)'; // Foreground color
+                        ctx.fill();
+                    }
+                }
+                
+                function init() {
+                    particles = [];
+                    // Adjust particle count based on screen size for performance
+                    const particleCount = window.innerWidth < 768 ? 40 : 80;
+                    for (let i = 0; i < particleCount; i++) {
+                        particles.push(new Particle());
+                    }
+                }
+                
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    
+                    particles.forEach((p, index) => {
+                        p.update();
+                        p.draw();
+                        
+                        // Draw connections
+                        for (let j = index + 1; j < particles.length; j++) {
+                            const p2 = particles[j];
+                            const dx = p.x - p2.x;
+                            const dy = p.y - p2.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            
+                            if (dist < 150) {
+                                ctx.beginPath();
+                                ctx.strokeStyle = `rgba(189, 161, 108, ${0.15 - dist/1000})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.moveTo(p.x, p.y);
+                                ctx.lineTo(p2.x, p2.y);
+                                ctx.stroke();
+                            }
+                        }
+                    });
+                    
+                    requestAnimationFrame(animate);
+                }
+                
+                window.addEventListener('resize', () => {
+                    resize();
+                    init();
+                });
+                
+                resize();
+                init();
+                animate();
+            }
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-gradient-to-b', 'from-deepBlue/90', 'to-obsidian/90');
+                nav.classList.remove('glass-card');
+            } else {
+                nav.classList.remove('bg-gradient-to-b', 'from-deepBlue/90', 'to-obsidian/90');
+                nav.classList.add('glass-card');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Speaker Modal Data and Functions
+        const speakerData = {
+            chen: {
+                name: '陳伶志',
+                title: '台灣人工智慧學校執行長 / 中央研究院資訊服務處處長',
+                image: 'assets/1-chen.jpeg',
+                bio: `陳伶志博士現任台灣人工智慧學校執行長，同時擔任中央研究院資訊科學研究所研究員，並兼任中央研究院資訊服務處處長，長期投入人工智慧治理、資訊安全韌性與大規模數位轉型，協助組織在導入生成式工具的同時，兼顧法規遵循、風險控管與營運效率。<br><br>陳博士取得加州大學洛杉磯分校（UCLA）計算機科學博士學位，研究專長涵蓋物聯網（IoT）、行動無線網路，以及結合人工智慧的時空大數據分析。其代表性成果為微型 PM2.5 感測系統，已在全球多國大規模佈建，帶動微型空氣品質感測在軟硬體研發、即時資料分析與智慧城市等應用的發展，展現從技術研發到實際部署的深厚經驗。<br><br>在治理與實務推動上，陳博士長期帶領團隊精進資訊安全、運算服務與行政數位化，近年更著力於「行政導入生成式工具」與流程優化：從需求盤點、資料分級與權限管理，到作業流程串接、使用規範制定與服務品質追蹤，逐步把工具運用在知識查詢、文件彙整、客服回覆與內部協作等情境，提升行政作業的效率與一致性，同時把資安與法遵要求落到日常作業之中。身為台灣人工智慧學校執行長，他也推動人才培育與能力認證，並投入政府相關諮詢工作，協助各機關在推動人工智慧應用時，釐清需求與可行性、盤點風險與管理作法，建立務實可行的導入路徑。`
+            },
+            lien: {
+                name: '連賢明',
+                title: '中華經濟研究院院長 / 國立政治大學財政學系特聘教授',
+                image: 'assets/2-lien.jpg',
+                bio: `連賢明博士現任財團法人中華經濟研究院院長、國立政治大學財政學系特聘教授、創新國際學院副院長暨台灣研究中心執行長 。為美國波士頓大學（Boston University）經濟學系博士，擁有國立臺灣大學經濟學系學士與碩士學位 。曾任台灣健康經濟學會理事長、國立政治大學台灣研究中心主任、美國史丹佛高等行為研究中心（CASBS）訪問學者及 Fulbright 學者，並擔任二代健保改革規劃小組健保財務制度召集人 。在學術服務方面，長期擔任《人文及社會科學集刊》編輯委員與特刊編輯 。其學術成就備受肯定，曾榮獲財團法人孫運璿學術基金會學術論文獎、台灣經濟學會最佳經濟論文獎、國立政治大學研究優良獎，以及科技部「台灣─史丹佛人文社會科學領域人才培育獎學金」等殊榮 。<br><br>在研究與實務應用上，連博士專長於醫療經濟學、產業經濟學與應用計量方法 。他致力於運用嚴謹的實證數據分析解決複雜的社會經濟問題，研究成果廣泛發表於 American Economic Journal: Economic Policy、Journal of Health Economics 等國內外頂尖期刊 。其研究議題高度貼近社會脈動與政策需求，涵蓋全民健保支付制度對醫療品質與費用的影響 、部分負擔政策評估 、台灣財富分配趨勢推估 、家庭結構對教育與勞動供給之影響 ，以及重大公共衛生事件（如 H1N1）的媒體效應分析 。連博士不僅在學術領域深耕，更積極將計量分析成果轉化為具體的政策建議，協助政府在健保改革與社會福利政策上進行更精準的決策與制度優化。`
+            },
+            yu: {
+                name: '余孝先',
+                title: '清華大學科技管理學院兼任教授',
+                image: 'assets/3-yu.jpg',
+                bio: `余孝先博士現任國立清華大學兼任教授、國家資通安全研究院董事及數位經濟管理顧問股份有限公司董事。擁有國立交通大學資訊工程博士學位與美國雷鳥全球管理學院（Thunderbird School of Global Management）EMBA 學位。<br><br>余博士在台灣資通訊產業與研究機構擁有極為豐富的領導資歷。他曾任工業技術研究院（工研院）執行副總暨總營運長、協理及資安長，展現卓越的營運管理能力；其最具代表性的貢獻在於前瞻技術的佈局與組織創新，包括創辦工研院AI應用策略辦公室、巨量資訊科技中心及營運發展處，並曾任資訊與通訊研究所所長及服務系統科技中心主任。在資訊工業策進會（資策會）服務期間，擔任副執行長並創辦數位轉型研究所及大數據所，積極引領產業數位轉型浪潮。<br><br>除了研發機構的高階管理職務，余博士亦活躍於產官學界。他曾任行政院 NICI 雙網整合辦公室主任、台灣雲端物聯網協會常務理事暨 AI SIG 召集人、中華民國影像處理與圖形識別學會理事長，以及蕃薯藤數位科技技術長。在產業輔導與公司治理方面，歷任資鼎中小企業開發董事長、創新工業技術移轉公司董事，以及蒙恬科技、凌網科技獨立董事。余博士長期致力於整合技術研發與商業策略，是推動台灣大數據、人工智慧與數位經濟發展的關鍵領袖人物。`
+            },
+            lee: {
+                name: '李家岩',
+                title: '國立臺灣大學管理學院副院長暨 EiMBA 執行長',
+                image: 'assets/4-lee.jpg',
+                bio: `李家岩博士現任國立臺灣大學資訊管理學系教授兼管理學院副院長暨創業創新管理碩士在職專班(EiMBA)執行長，為美國 Texas A&M University 工業與系統工程博士，在高等教育從事研究教學工作與輔導產業數位轉型改善活動超過20年。為國際期刊 IEEE Transactions on Automation Science and Engineering資深編輯、IEEE Transactions on Semiconductor Manufacturing 副編輯、台灣人工智慧學校講師、半導體廠、面板廠、AI 軟體開發商等相關產業技術顧問。曾任國立成功大學製造資訊與系統研究所所長、工業工程學會秘書長、國家品質獎審查委員、國科會、教育部、經濟部等多項計畫審查委員或技術專家顧問等。研究領域包含製造數據科學、生產力與效率分析、多智能體強化學習、多目標決策分析。擔任超過60件產學合作計畫主持人於高科技製造、封裝與測試、面板業、石化工業、五金扣件、工具機設備、伺服馬達等相關產業。曾榮獲科技部傑出研究獎、台達年輕學者科技講座、台灣人工智慧協會 AI 學術產業化獎、工業工程學會工業工程獎章、呂鳳章先生紀念獎章、科技部吳大猷先生紀念獎。期望以作業研究與數據科學方法，協助產業雙軸轉型與健全產業生態系統。<br><br>在推動數據驅動決策的實務上，李博士長期領導團隊深耕數據科學、綜效整合與產業應用，近年更聚焦於數位轉型與營運流程優化。其研究與實作橫跨需求預測、動態定價、產能與資源規劃、成本結構分析，並延伸至生產派工、設備保養排程、採購比對與庫存管理等作業層面，逐步將 AI 方法論系統化導入企業的策略規劃、產品開發、資源配置、流程再造、知識管理與跨部門協作，全面提升組織內外部與供應鏈的營運效率與韌性。同時，他亦致力於將 AI 素養與AI工具融入日常工作流程，協助組織建立可持續的數據應用文化。身為管理學院教授，李博士積極推動產學合作與創業創新，並參與產官學研相關諮詢工作，協助各界在推動人工智慧產業應用時，釐清問題定義、數據分析與決策支援架構，並透過其提出的「五階段數據科學構析（5-Phase Data Science Analytics）」方法論，建立穩健務實且可落地的 AI 專案導入流程。`
+            },
+            tsai: {
+                name: '蔡明順',
+                title: '台灣人工智慧學校校務長',
+                image: 'assets/5-tsai.png',
+                bio: `蔡明順先生現任台灣人工智慧學校校務長，並於國立清華大學跨院國際博士班進修，專攻智慧製造與數位決策領域。除致力於 AI 人才培育與校務推動外，亦擔任國科會 TAIWAN AICoE 策略委員會委員，以及台灣氣候聯盟綠色與數位科技委員會召集人，積極連結產官學研資源，推動 AI 生態系發展與產業綠色數位轉型。<br><br>蔡校務長擁有超過 20 年的跨國資訊產業經驗，歷任 SAP 德商思愛普大中華區資深副總經理、Oracle 美商甲骨文應用軟體部副總經理，以及 Teradata 美商天睿資訊系統資深協理。其職涯橫跨資訊工程、產品管理、營運策略、市場行銷及生態系統培育，對於全球軟體產業趨勢、SaaS 服務模式與企業數位化進程具有深刻的實務洞察。<br><br>在專業領域上，蔡校務長深耕於 AI、Big Data 與數位轉型。本次他將帶來以「關鍵轉折點：生成式 AI 開啟 AI 的 iPhone 時刻」為題的演講，憑藉其豐富的產業經驗與前瞻視野，解析生成式 AI 如何引爆新一波技術革命，並探討企業在此關鍵時刻應如何掌握轉型契機，以數據驅動創新未來。`
+            }
+        };
+
+        function openSpeakerModal(speakerId) {
+            const speaker = speakerData[speakerId];
+            if (!speaker) return;
+
+            document.getElementById('modalSpeakerImg').src = speaker.image;
+            document.getElementById('modalSpeakerImg').alt = speaker.name;
+            document.getElementById('modalSpeakerName').textContent = speaker.name;
+            document.getElementById('modalSpeakerTitle').textContent = speaker.title;
+            document.getElementById('modalSpeakerBio').innerHTML = speaker.bio;
+
+            const modal = document.getElementById('speakerModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSpeakerModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('speakerModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSpeakerModal();
+                closeCertificateModal();
+            }
+        });
+
+        // Certificate Modal Functions
+        function openCertificateModal() {
+            if (window.innerWidth < 768) return; // Disable on mobile (width < 768px)
+            const modal = document.getElementById('certificateModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertificateModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('certificateModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // CTA Section Animated Wave Lines
+        (function() {
+            const ctaCanvas = document.getElementById('cta-circles-canvas');
+            if (!ctaCanvas) return;
+
+            const ctaCtx = ctaCanvas.getContext('2d');
+            if (!ctaCtx) return;
+
+            let ctaWidth, ctaHeight;
+            let time = 0;
+
+            const LINE_COUNT = 22;
+            const BASE_AMPLITUDE = 60;
+            const FREQUENCY = 0.003;
+            const WAVE_SPEED = 0.008;
+
+            function resizeCtaCanvas() {
+                const section = ctaCanvas.parentElement;
+                if (!section) return;
+                
+                // Use window dimensions as fallback if section dimensions are not ready
+                ctaWidth = ctaCanvas.width = section.offsetWidth || window.innerWidth;
+                ctaHeight = ctaCanvas.height = section.offsetHeight || window.innerHeight;
+            }
+
+            function drawWaveLine(index) {
+                // Phase offset creates the time-sequential overlapping effect
+                const phaseOffset = index * 0.15;
+                // Y offset spreads lines vertically with varying gaps
+                const baseY = ctaHeight * 0.5 + (index - LINE_COUNT / 2) * 8;
+
+                ctaCtx.beginPath();
+
+                for (let x = 0; x <= ctaWidth; x += 2) {
+                    // Multiple sine waves combined for organic movement
+                    const wave1 = Math.sin(x * FREQUENCY + time * WAVE_SPEED + phaseOffset) * BASE_AMPLITUDE;
+                    const wave2 = Math.sin(x * FREQUENCY * 2.1 + time * WAVE_SPEED * 0.7 + phaseOffset * 1.3) * BASE_AMPLITUDE * 0.3;
+                    const wave3 = Math.sin(x * FREQUENCY * 0.5 + time * WAVE_SPEED * 1.2 - phaseOffset * 0.5) * BASE_AMPLITUDE * 0.2;
+
+                    const y = baseY + wave1 + wave2 + wave3;
+
+                    if (x === 0) {
+                        ctaCtx.moveTo(x, y);
+                    } else {
+                        ctaCtx.lineTo(x, y);
+                    }
+                }
+
+                // Opacity varies by line position - center lines brighter
+                const distFromCenter = Math.abs(index - LINE_COUNT / 2) / (LINE_COUNT / 2);
+                const opacity = 0.18 - distFromCenter * 0.10;
+
+                // Alternate between gold and blue with gradient
+                const gradient = ctaCtx.createLinearGradient(0, 0, ctaWidth, 0);
+                if (index % 2 === 0) {
+                    gradient.addColorStop(0, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(189, 161, 108, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(212, 184, 138, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                } else {
+                    gradient.addColorStop(0, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(189, 161, 108, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(212, 184, 138, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                }
+
+                ctaCtx.strokeStyle = gradient;
+                ctaCtx.lineWidth = 1;
+                ctaCtx.stroke();
+            }
+
+            function animateCtaWaves() {
+                if (!ctaCtx || !ctaWidth || !ctaHeight) return;
+                
+                ctaCtx.clearRect(0, 0, ctaWidth, ctaHeight);
+
+                // Draw all wave lines
+                for (let i = 0; i < LINE_COUNT; i++) {
+                    drawWaveLine(i);
+                }
+
+                time += 1;
+                requestAnimationFrame(animateCtaWaves);
+            }
+
+            window.addEventListener('resize', () => {
+                resizeCtaCanvas();
+            });
+
+            // Wait for DOM to be ready and ensure section dimensions are calculated
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Use setTimeout to ensure layout is complete
+                    setTimeout(() => {
+                        resizeCtaCanvas();
+                        animateCtaWaves();
+                    }, 100);
+                });
+            } else {
+                // DOM already loaded, but wait a bit for layout
+                setTimeout(() => {
+                    resizeCtaCanvas();
+                    animateCtaWaves();
+                }, 100);
+            }
+        })();
+
+        // Impact Stats Counter Animation
+        (function() {
+            const stats = document.querySelectorAll('#impact [data-count]');
+            let hasAnimated = false;
+
+            function animateCounter(element) {
+                const target = parseInt(element.getAttribute('data-count'));
+                const duration = 800; // 0.8 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        element.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target.toLocaleString();
+                    }
+                };
+
+                updateCounter();
+            }
+
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        stats.forEach((stat, index) => {
+                            setTimeout(() => {
+                                animateCounter(stat);
+                            }, index * 100); // Stagger animation by 100ms
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const impactSection = document.getElementById('impact');
+            if (impactSection) {
+                statsObserver.observe(impactSection);
+            }
+        })();
+
+        // Hero Section Animated Wave Lines
+        (function() {
+            const heroCanvas = document.getElementById('hero-dots-canvas');
+            if (!heroCanvas) return;
+
+            const heroCtx = heroCanvas.getContext('2d');
+            if (!heroCtx) return;
+
+            let heroWidth, heroHeight;
+            let heroTime = 0;
+
+            const LINE_COUNT = 40;  // Number of wave lines
+            const BASE_AMPLITUDE = 100;  // Larger amplitude for more vertical movement
+            const FREQUENCY = 0.0025;
+            const WAVE_SPEED = 0.006;
+
+            function resizeHeroCanvas() {
+                const section = heroCanvas.parentElement;
+                if (!section) return;
+                
+                heroWidth = heroCanvas.width = section.offsetWidth || window.innerWidth;
+                heroHeight = heroCanvas.height = section.offsetHeight || window.innerHeight;
+            }
+
+            function drawWaveLine(index) {
+                // Phase offset creates the time-sequential overlapping effect
+                const phaseOffset = index * 0.12;
+                // Y offset spreads lines vertically across the entire height
+                const verticalSpacing = heroHeight / (LINE_COUNT + 1);
+                const baseY = verticalSpacing * (index + 1);
+
+                heroCtx.beginPath();
+
+                for (let x = 0; x <= heroWidth; x += 2) {
+                    // Multiple sine waves combined for organic movement
+                    const wave1 = Math.sin(x * FREQUENCY + heroTime * WAVE_SPEED + phaseOffset) * BASE_AMPLITUDE;
+                    const wave2 = Math.sin(x * FREQUENCY * 2.1 + heroTime * WAVE_SPEED * 0.7 + phaseOffset * 1.3) * BASE_AMPLITUDE * 0.3;
+                    const wave3 = Math.sin(x * FREQUENCY * 0.5 + heroTime * WAVE_SPEED * 1.2 - phaseOffset * 0.5) * BASE_AMPLITUDE * 0.2;
+
+                    const y = baseY + wave1 + wave2 + wave3;
+
+                    if (x === 0) {
+                        heroCtx.moveTo(x, y);
+                    } else {
+                        heroCtx.lineTo(x, y);
+                    }
+                }
+
+                // Opacity varies by line position - center lines brighter
+                const distFromCenter = Math.abs(index - LINE_COUNT / 2) / (LINE_COUNT / 2);
+                const opacity = 0.25 - distFromCenter * 0.12;
+
+                // Alternate between gold and slightly varied gold with gradient
+                const gradient = heroCtx.createLinearGradient(0, 0, heroWidth, 0);
+                if (index % 2 === 0) {
+                    gradient.addColorStop(0, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(189, 161, 108, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(212, 184, 138, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(189, 161, 108, ${opacity * 0.3})`);
+                } else {
+                    gradient.addColorStop(0, `rgba(212, 184, 138, ${opacity * 0.3})`);
+                    gradient.addColorStop(0.3, `rgba(212, 184, 138, ${opacity})`);
+                    gradient.addColorStop(0.7, `rgba(189, 161, 108, ${opacity})`);
+                    gradient.addColorStop(1, `rgba(212, 184, 138, ${opacity * 0.3})`);
+                }
+
+                heroCtx.strokeStyle = gradient;
+                heroCtx.lineWidth = 1;
+                heroCtx.stroke();
+            }
+
+            function animateHeroWaves() {
+                if (!heroCtx || !heroWidth || !heroHeight) return;
+                
+                heroCtx.clearRect(0, 0, heroWidth, heroHeight);
+
+                // Draw all wave lines
+                for (let i = 0; i < LINE_COUNT; i++) {
+                    drawWaveLine(i);
+                }
+
+                heroTime += 1;
+                requestAnimationFrame(animateHeroWaves);
+            }
+
+            window.addEventListener('resize', () => {
+                resizeHeroCanvas();
+            });
+
+            // Wait for DOM to be ready and ensure section dimensions are calculated
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    setTimeout(() => {
+                        resizeHeroCanvas();
+                        animateHeroWaves();
+                    }, 100);
+                });
+            } else {
+                setTimeout(() => {
+                    resizeHeroCanvas();
+                    animateHeroWaves();
+                }, 100);
+            }
+        })();
+    </script>
+</body>
+</html>
