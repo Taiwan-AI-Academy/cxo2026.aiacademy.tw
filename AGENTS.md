@@ -31,6 +31,31 @@
 - **Font Awesome 6.4.0** - Icon 圖示
 - **Google Fonts** - Noto Sans TC + Playfair Display
 
+## 測試（Playwright / 即時頁面）
+
+### 即時測試站
+
+- **測試網址來源**：`.env` 內的 `TEST_SITE_URL`
+- **特性**：開發中為**即時生效**的頁面（改完 `index.html` / `sponsor.html` 後可直接在該網址驗證）
+- **Workaround（工具無法讀 .env 時）**：在終端機只取出 `TEST_SITE_URL`（避免輸出整份 `.env`）：
+
+```bash
+grep '^TEST_SITE_URL=' .env
+```
+
+### Playwright 測試方式（透過 MCP）
+
+只要 MCP 已安裝 Playwright，即可用瀏覽器自動化做 smoke test：
+- **測試入口**：
+  - `index.html`：以 `TEST_SITE_URL`（或 `TEST_SITE_URL/index.html`）開啟
+  - `sponsor.html`：以 `TEST_SITE_URL/sponsor.html` 開啟
+- 如 AI 判斷需要測試查看畫面並 MCP 有裝 Playwright，就可以用 Playwright 進行頁面測試
+
+### 邊界（避免踩雷）
+
+- **不要**把 `TEST_SITE_URL` 硬寫進 HTML/JS（只用於測試）
+- **不要**提交 `.env` 或任何環境網址到版本庫
+
 ## 檔案結構
 
 ```
